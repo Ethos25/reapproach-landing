@@ -1399,10 +1399,20 @@
   const form = document.getElementById('waitlist-form');
   const success = document.getElementById('form-success');
 
-  form.addEventListener('submit', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault();
-    form.classList.add('submitted');
-    success.classList.add('active');
+    const formData = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    }).then(() => {
+      form.classList.add('submitted');
+      success.classList.add('active');
+    }).catch(() => {
+      form.classList.add('submitted');
+      success.classList.add('active');
+    });
   });
 
   // ─── SMOOTH SCROLL FOR ANCHOR LINKS ───
