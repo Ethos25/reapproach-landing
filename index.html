@@ -1070,6 +1070,46 @@
 
   #early-access { scroll-margin-top: 5rem; }
   #manifesto { scroll-margin-top: 5rem; }
+  /* ─── PRIVACY MODAL ─── */
+.privacy-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+.privacy-overlay.active { display: flex; }
+.privacy-modal {
+  background: var(--color-bg);
+  max-width: 640px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  margin: 1rem;
+  position: relative;
+}
+.privacy-modal h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+.privacy-modal p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.privacy-modal .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+}
 </style>
 </head>
 <body>
@@ -1357,9 +1397,27 @@
 <footer>
   <div class="container">
     <div class="footer-copy">© 2026 ReApproach Education</div>
-    <div class="footer-email"><a href="mailto:hello@reapproacheducation.com">hello@reapproacheducation.com</a></div>
+    <div style="display: flex; gap: 2rem; align-items: center;">
+      <a href="#" onclick="document.getElementById('privacy-overlay').classList.add('active'); return false;" style="font-size: 0.8rem; color: #8B8479; text-decoration: none; border-bottom: 1px solid #D4CEC5; padding-bottom: 1px;">Privacy</a>
+      <div class="footer-email"><a href="mailto:hello@reapproacheducation.com">hello@reapproacheducation.com</a></div>
+    </div>
   </div>
 </footer>
+
+<div class="privacy-overlay" id="privacy-overlay" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="privacy-modal">
+    <button class="close-btn" onclick="document.getElementById('privacy-overlay').classList.remove('active')">×</button>
+    <h3>Privacy Policy</h3>
+    <p><strong>Last updated:</strong> February 2026</p>
+    <p>ReApproach Education ("we," "us") operates reapproacheducation.com. This policy explains how we handle information collected through this site.</p>
+    <p><strong>What we collect.</strong> When you join our waitlist, we collect your name and email address. That's it.</p>
+    <p><strong>How we use it.</strong> We use your information to notify you when ReApproach is available for early access. We may occasionally send updates about the program. We will never sell, rent, or share your personal information with third parties.</p>
+    <p><strong>Where it's stored.</strong> Form submissions are processed and stored by Netlify, our hosting provider. Data is handled in accordance with Netlify's privacy practices.</p>
+    <p><strong>Your rights.</strong> You can request deletion of your information at any time by emailing hello@reapproacheducation.com. We will remove your data within 30 days.</p>
+    <p><strong>Cookies.</strong> This site does not use cookies or tracking scripts.</p>
+    <p><strong>Contact.</strong> Questions about this policy can be directed to hello@reapproacheducation.com.</p>
+  </div>
+</div>
 
 <script>
   // ─── NAV SCROLL ───
