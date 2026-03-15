@@ -298,6 +298,17 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 .radiant-sparkle::after{bottom:0;right:0}
 .card-radiant{position:absolute;top:4px;left:4px;font-size:.5rem;z-index:3;opacity:.8}
 
+/* RADIANT METEOR SHOWER */
+.meteor-shower{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:650;overflow:hidden}
+.meteor{position:absolute;width:3px;height:3px;border-radius:50%;animation:meteorFall linear forwards}
+.meteor::after{content:'';position:absolute;top:0;left:0;width:2px;height:40px;background:linear-gradient(to bottom,currentColor,transparent);transform:rotate(45deg);transform-origin:top left;border-radius:2px}
+@keyframes meteorFall{0%{opacity:1;transform:translate(0,0)}100%{opacity:0;transform:translate(var(--mx),var(--my))}}
+.radiant-flash{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:640;opacity:0;animation:radFlash .6s ease-out forwards}
+@keyframes radFlash{0%{opacity:0}15%{opacity:.3}100%{opacity:0}}
+.radiant-ring{position:fixed;pointer-events:none;z-index:645;border-radius:50%;border:2px solid;opacity:0;animation:ringExpand .8s ease-out forwards}
+@keyframes ringExpand{0%{opacity:.8;transform:translate(-50%,-50%) scale(0)}60%{opacity:.4}100%{opacity:0;transform:translate(-50%,-50%) scale(1)}}
+@keyframes confettiBurst{0%{opacity:1;transform:translateY(0) translateX(0) rotate(0deg) scale(1)}40%{opacity:1}100%{opacity:0;transform:translateY(var(--cty)) translateX(var(--ctx)) rotate(var(--cr)) scale(0.3)}}
+
 /* BUDDY BADGE */
 .buddy-wrap{position:absolute;top:6px;right:10px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:2;cursor:pointer}
 .buddy-badge{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;border:2px solid rgba(125,249,255,.2);background:rgba(255,255,255,.04);transition:all .3s;animation:buddyPulse 3s ease-in-out infinite}
@@ -943,22 +954,183 @@ function checkWildElement(){
 }
 
 // ═══════════════════════════════════════
-// EASTER EGG 1: RADIANT ELEMENTS (5% on revisit)
+// EASTER EGG 1: RADIANT ELEMENTS (7% on revisit)
 // ═══════════════════════════════════════
-function isRadiant(){return Math.random()<0.05}
+function isRadiant(){return Math.random()<0.07}
 function playRadiantSound(){
-  playTone(1047,'sine',.08,.08);setTimeout(function(){playTone(1319,'sine',.08,.08)},40);
-  setTimeout(function(){playTone(1568,'sine',.08,.08)},80);setTimeout(function(){playTone(2093,'sine',.12,.1)},120);
+  // TRIPLE TRUMPET FANFARE — brassy, loud, unmissable
+  playTone(523,'square',.35,.14);setTimeout(function(){playTone(523,'square',.2,.12)},180);
+  setTimeout(function(){playTone(659,'square',.2,.12)},320);setTimeout(function(){playTone(784,'square',.5,.16)},480);
+  // Shimmer cascade
+  setTimeout(function(){playTone(1047,'sine',.15,.1)},680);setTimeout(function(){playTone(1319,'sine',.15,.1)},750);
+  setTimeout(function(){playTone(1568,'sine',.15,.1)},820);setTimeout(function(){playTone(2093,'sine',.25,.12)},900);
+  // SECOND fanfare hit
+  setTimeout(function(){playTone(784,'square',.2,.12)},1200);setTimeout(function(){playTone(1047,'square',.5,.16)},1400);
+  // THIRD fanfare — triumphant finale
+  setTimeout(function(){playTone(784,'square',.15,.12)},2200);setTimeout(function(){playTone(1047,'square',.2,.14)},2400);
+  setTimeout(function(){playTone(1319,'square',.6,.16)},2600);
+  // Shimmer tail
+  setTimeout(function(){playTone(2093,'sine',.2,.08)},2800);setTimeout(function(){playTone(2637,'sine',.15,.06)},2950);setTimeout(function(){playTone(3136,'sine',.3,.08)},3100);
+  // Deep booms throughout
+  setTimeout(function(){playTone(65,'sine',.5,.1)},80);
+  setTimeout(function(){playTone(80,'sine',.4,.08)},480);
+  setTimeout(function(){playTone(100,'sine',.4,.08)},1200);
+  setTimeout(function(){playTone(80,'sine',.5,.1)},2400);
+}
+function shakeScreen(){
+  var el=document.body;el.style.transition='none';
+  var shakes=[[-4,-2],[6,3],[-3,5],[5,-4],[-6,2],[3,-3],[-2,4],[4,-2],[-3,1],[2,-3],[0,0]];
+  shakes.forEach(function(s,i){
+    setTimeout(function(){el.style.transform='translate('+s[0]+'px,'+s[1]+'px)'},i*40);
+  });
+  setTimeout(function(){el.style.transform='';el.style.transition=''},500);
+}
+function spawnMeteorShower(){
+  var container=document.createElement('div');container.className='meteor-shower';document.body.appendChild(container);
+  var colors=['#FFD93D','#FF6B6B','#7DF9FF','#C792EA','#6BCB77','#4D96FF','#FF7043','#fff','#E040FB','#FFAB40'];
+
+  // SCREEN SHAKE on impact
+  shakeScreen();
+
+  // PHASE 1: BRIGHT screen flash (0ms)
+  var flash=document.createElement('div');flash.className='radiant-flash';
+  flash.style.background='linear-gradient(135deg,rgba(255,217,61,.3),rgba(125,249,255,.2),rgba(199,146,234,.2))';
+  document.body.appendChild(flash);
+
+  // PHASE 2: 7 shockwave rings (0-840ms)
+  for(var r=0;r<7;r++){
+    (function(idx){
+      setTimeout(function(){
+        var ring=document.createElement('div');ring.className='radiant-ring';
+        var rc=['#FFD93D','#7DF9FF','#C792EA','#FF6B6B','#6BCB77','#fff','#E040FB'];
+        ring.style.cssText='top:40%;left:50%;width:'+(120+idx*70)+'px;height:'+(120+idx*70)+'px;border-color:'+rc[idx]+';border-width:3px';
+        document.body.appendChild(ring);
+        setTimeout(function(){ring.remove()},1000);
+      },idx*120);
+    })(r);
+  }
+
+  // PHASE 3: 70 meteors (200ms - 4000ms)
+  for(var i=0;i<70;i++){
+    (function(idx){
+      setTimeout(function(){
+        var m=document.createElement('div');m.className='meteor';
+        var c=colors[Math.floor(Math.random()*colors.length)];
+        var startX=Math.random()*120-10;
+        var dur=0.4+Math.random()*0.8;
+        var mx=60+Math.random()*300;
+        var my=200+Math.random()*600;
+        var sz=3+Math.random()*4;
+        m.style.cssText='left:'+startX+'%;top:-10px;color:'+c+';background:'+c+';box-shadow:0 0 10px '+c+',0 0 20px '+c+';--mx:'+mx+'px;--my:'+my+'px;animation-duration:'+dur+'s;width:'+sz+'px;height:'+sz+'px';
+        container.appendChild(m);
+      },200+idx*55);
+    })(i);
+  }
+
+  // PHASE 4: FIRST confetti wave — 120 pieces launching UP from bottom (500ms)
+  for(var j=0;j<120;j++){
+    (function(idx){
+      setTimeout(function(){
+        var conf=document.createElement('div');
+        var c=colors[Math.floor(Math.random()*colors.length)];
+        var w=Math.random()*10+4;var h=Math.random()*8+3;
+        var sx=Math.random()*innerWidth;
+        var tx=(Math.random()-0.5)*500;
+        var ty=-(150+Math.random()*400);
+        var rot=Math.random()*1080-540;
+        var dur=2+Math.random()*2;
+        conf.style.cssText='position:fixed;left:'+sx+'px;bottom:-10px;width:'+w+'px;height:'+h+'px;background:'+c+';border-radius:'+(Math.random()>0.5?'50%':'2px')+';z-index:660;pointer-events:none;opacity:1;box-shadow:0 0 6px '+c+';animation:confettiBurst '+dur+'s cubic-bezier(.15,.8,.3,1) forwards';
+        conf.style.setProperty('--ctx',tx+'px');
+        conf.style.setProperty('--cty',ty+'px');
+        conf.style.setProperty('--cr',rot+'deg');
+        document.body.appendChild(conf);
+        setTimeout(function(){conf.remove()},dur*1000+100);
+      },500+idx*30);
+    })(j);
+  }
+
+  // PHASE 5: 15 big particle bursts (300ms - 5000ms)
+  for(var b=0;b<15;b++){
+    (function(idx){
+      setTimeout(function(){
+        bigBurst(Math.random()*innerWidth,Math.random()*innerHeight*0.7,colors[Math.floor(Math.random()*colors.length)]);
+      },300+idx*320);
+    })(b);
+  }
+
+  // PHASE 6: Second screen flash + shake at peak (1800ms)
+  setTimeout(function(){
+    shakeScreen();
+    var flash2=document.createElement('div');flash2.className='radiant-flash';
+    flash2.style.background='linear-gradient(135deg,rgba(255,217,61,.35),rgba(255,107,107,.2))';
+    document.body.appendChild(flash2);
+    setTimeout(function(){flash2.remove()},700);
+  },1800);
+
+  // PHASE 7: SECOND confetti wave from SIDES (3000ms) — 80 more pieces
+  setTimeout(function(){
+    for(var k=0;k<80;k++){
+      (function(idx){
+        setTimeout(function(){
+          var conf=document.createElement('div');
+          var c=colors[Math.floor(Math.random()*colors.length)];
+          var w=Math.random()*10+4;var h=Math.random()*8+3;
+          var fromLeft=Math.random()>0.5;
+          var sx=fromLeft?-10:innerWidth+10;
+          var tx=fromLeft?(200+Math.random()*300):-(200+Math.random()*300);
+          var ty=(Math.random()-0.5)*400;
+          var rot=Math.random()*1080-540;
+          var dur=1.5+Math.random()*2;
+          conf.style.cssText='position:fixed;left:'+sx+'px;top:'+(Math.random()*innerHeight*0.6+innerHeight*0.1)+'px;width:'+w+'px;height:'+h+'px;background:'+c+';border-radius:'+(Math.random()>0.5?'50%':'2px')+';z-index:660;pointer-events:none;opacity:1;box-shadow:0 0 6px '+c+';animation:confettiBurst '+dur+'s cubic-bezier(.15,.8,.3,1) forwards';
+          conf.style.setProperty('--ctx',tx+'px');
+          conf.style.setProperty('--cty',ty+'px');
+          conf.style.setProperty('--cr',rot+'deg');
+          document.body.appendChild(conf);
+          setTimeout(function(){conf.remove()},dur*1000+100);
+        },idx*25);
+      })(k);
+    }
+  },3000);
+
+  // PHASE 8: Third flash + massive starburst finale (4500ms)
+  setTimeout(function(){
+    shakeScreen();
+    var flash3=document.createElement('div');flash3.className='radiant-flash';
+    flash3.style.background='linear-gradient(135deg,rgba(255,217,61,.4),rgba(125,249,255,.25))';
+    document.body.appendChild(flash3);
+    setTimeout(function(){flash3.remove()},700);
+    for(var s=0;s<12;s++){
+      bigBurst(innerWidth/2+(Math.random()*200-100),innerHeight*0.35+(Math.random()*100-50),colors[Math.floor(Math.random()*colors.length)]);
+    }
+  },4500);
+
+  // PHASE 9: Lingering sparkle rain (5000-7000ms)
+  setTimeout(function(){
+    for(var sp=0;sp<30;sp++){
+      (function(idx){
+        setTimeout(function(){
+          var s=document.createElement('div');
+          s.style.cssText='position:fixed;left:'+Math.random()*100+'%;top:-5px;width:3px;height:3px;border-radius:50%;background:#FFD93D;box-shadow:0 0 6px #FFD93D;pointer-events:none;z-index:660;opacity:1;animation:meteorFall '+(1+Math.random())+'s linear forwards;--mx:'+(Math.random()*40-20)+'px;--my:'+(innerHeight+20)+'px';
+          document.body.appendChild(s);
+          setTimeout(function(){s.remove()},2200);
+        },idx*65);
+      })(sp);
+    }
+  },5000);
+
+  // Cleanup (8 seconds total)
+  setTimeout(function(){container.remove();flash.remove()},8000);
 }
 function applyRadiant(el){
-  const hdr=document.getElementById('mhdr');hdr.classList.add('radiant');
-  const info=hdr.querySelector('.m-info');
-  if(info){const badge=document.createElement('div');badge.className='radiant-badge';badge.textContent='✨ RADIANT';info.insertBefore(badge,info.firstChild)}
-  const etT=document.getElementById('meternText');
-  const radiantLines=['Whoa! A RADIANT '+el.n+'! Incredibly rare!','The universe is shining on you! RADIANT '+el.n+'!','I have not seen a Radiant in centuries! '+el.n+' is glowing!','RADIANT! Only the luckiest explorers find these!','The atoms are aligned! A RADIANT '+el.n+'!'];
+  var hdr=document.getElementById('mhdr');hdr.classList.add('radiant');
+  var info=hdr.querySelector('.m-info');
+  if(info){var badge=document.createElement('div');badge.className='radiant-badge';badge.textContent='✨ RADIANT';info.insertBefore(badge,info.firstChild)}
+  var etT=document.getElementById('meternText');
+  var radiantLines=['Whoa! A RADIANT '+el.n+'! Incredibly rare!','The universe is shining on you! RADIANT '+el.n+'!','I have not seen a Radiant in centuries! '+el.n+' is glowing!','RADIANT! Only the luckiest explorers find these!','The atoms are aligned! A RADIANT '+el.n+'!'];
   etT.textContent='✨ Eternatus: "'+radiantLines[Math.floor(Math.random()*radiantLines.length)]+'"';
   if(!state.radiants.includes(el.num)){state.radiants.push(el.num);saveAll()}
   playRadiantSound();
+  spawnMeteorShower();
 }
 function clearRadiant(){document.getElementById('mhdr').classList.remove('radiant');var b=document.querySelector('.radiant-badge');if(b)b.remove()}
 
