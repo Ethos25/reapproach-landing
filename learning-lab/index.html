@@ -183,6 +183,109 @@
   }
 
   /* ─── GAME GRID ─── */
+  /* ─── FEATURED GAME ─── */
+  .featured-game {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--color-green-deep);
+    padding: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  .featured-game:hover {
+    background: #324A3A;
+  }
+  .featured-game::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(107,143,114,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .featured-game-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: center;
+  }
+  @media (max-width: 600px) {
+    .featured-game-inner { grid-template-columns: 1fr; }
+  }
+  .featured-game-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s var(--ease-out);
+  }
+  .featured-game:hover .featured-game-icon {
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.06);
+  }
+  .featured-game-icon svg {
+    width: 34px;
+    height: 34px;
+    stroke: var(--color-green-light);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  .featured-game-label {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-green-sage);
+    margin-bottom: 0.5rem;
+  }
+  .featured-game h3 {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+  .featured-game p {
+    font-size: 0.95rem;
+    color: var(--color-green-light);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 1rem;
+  }
+  .featured-game-cta {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-green-mist);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+  }
+  .featured-game:hover .featured-game-cta { gap: 0.8rem; }
+  .featured-game-cta::after {
+    content: '→';
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+  }
+  .featured-game:hover .featured-game-cta::after { transform: translateX(2px); }
+
   .games-section {
     padding: clamp(4rem, 8vw, 7rem) 0 clamp(5rem, 10vw, 8rem);
   }
@@ -393,6 +496,21 @@
 <!-- ─── GAMES ─── -->
 <section class="games-section">
   <div class="container">
+
+    <a href="/learning-lab/elementum.html" class="featured-game reveal">
+      <div class="featured-game-inner">
+        <div class="featured-game-icon">
+          <svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="13"/><circle cx="17" cy="17" r="6" stroke-dasharray="3 2"/><circle cx="17" cy="17" r="2.5" fill="var(--color-green-light)" stroke="none"/><circle r="2" fill="var(--color-green-light)" opacity=".6"><animateMotion dur="3s" repeatCount="indefinite" path="M17,4 A13,13 0 1,1 16.99,4"/></circle><circle r="1.5" fill="var(--color-green-light)" opacity=".4"><animateMotion dur="4.5s" repeatCount="indefinite" path="M17,4 A13,13 0 1,0 17.01,4"/></circle></svg>
+        </div>
+        <div>
+          <div class="featured-game-label">Featured</div>
+          <h3>Elementum</h3>
+          <p>Master the periodic table of elements. Built for the youngest scientists, designed to make every atom unforgettable.</p>
+          <span class="featured-game-cta">Launch Elementum</span>
+        </div>
+      </div>
+    </a>
+
     <div class="games-grid">
 
       <a href="/learning-lab/world-explorer.html" class="game-card reveal" style="transition-delay: 0.05s;">
