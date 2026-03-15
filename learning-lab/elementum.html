@@ -844,7 +844,7 @@ function renderCards(){
       if(isNew){bigBurst(ev.clientX,ev.clientY,fc.c);playDiscover();showCeleb('New Element!');w.classList.remove('undiscovered');setTimeout(()=>{checkAch();checkMega();updateTabLocks();maybeMatch()},500)}
       else{burst(ev.clientX,ev.clientY,fc.c);playRevisit(el.f)}
       if(isNewFam)setTimeout(()=>playTone(392,'sine',.1),400);
-      speakName(el.n);updatePower();updateCount();
+      updatePower();updateCount();
     };
     grid.appendChild(w);
   });
@@ -927,7 +927,7 @@ function renderMap(){
       const isNew=discover(el.num);const isNewFam=discoverFam(el.f);openModal(el,isNew,isNewFam);
       if(isNew){bigBurst(ev.clientX,ev.clientY,fc.c);playDiscover();showCeleb('New Element!');d.classList.remove('undiscovered');setTimeout(()=>{checkAch();checkMega();updateTabLocks();maybeMatch()},500)}
       else{burst(ev.clientX,ev.clientY,fc.c);playRevisit(el.f)}
-      speakName(el.n);updatePower();
+      updatePower();
       // Column teaching
       if(COL_TEACH[c]){const hint=document.getElementById('dmColHint');document.getElementById('dmColText').textContent=T(COL_TEACH[c]+` See? All ${F[COL_FAM[c]]?.n||'elements'} in the same column share the same powers!`);hint.classList.add('show')}
     };
@@ -954,11 +954,12 @@ function openModal(el,isNew,isNewFam){
   if(isNew){
     let line=el.eLine?T(el.eLine):T(F[el.f].disc);
     if(isNewFam)line=`NEW FAMILY: ${F[el.f].n}! `+line;
-    etT.textContent='⚡ Eternatus: "'+line+'"';setTimeout(()=>speakName(el.n),300);
+    etT.textContent='⚡ Eternatus: "'+line+'"';
   }else{
     const rv=el.rv?T(el.rv):`${el.n}! One of my favorites.`;
     etT.textContent='🐉 Eternatus: "'+rv+'"';
   }
+  speakName(el.n);
   playRumble();if(isNew)document.getElementById('mspText').textContent=el.eLine?T(el.eLine):T(F[el.f].disc);
   const btn=document.getElementById('mspk');btn.style.borderColor=fc.bd;btn.style.background=fc.bg;btn.style.color=fc.c;
   btn.onclick=()=>{speakName(el.n);playFamilySound(el.f)};
