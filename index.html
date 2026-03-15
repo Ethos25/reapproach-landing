@@ -169,6 +169,31 @@
     color: var(--color-green-forest);
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-lab-link {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-green-forest);
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border: 1.5px solid var(--color-green-forest);
+    transition: all 0.3s ease;
+  }
+
+  .nav-lab-link:hover {
+    background: var(--color-green-deep);
+    color: var(--color-bg);
+    border-color: var(--color-green-deep);
+  }
+
   .nav-status {
     font-family: var(--font-body);
     font-size: 0.7rem;
@@ -1118,10 +1143,10 @@
 <nav id="main-nav">
   <div class="container">
     <a href="#" class="logo"><span>Re</span>Approach</a>
-    <div style="display:flex;align-items:center;gap:2rem;">
-  <a href="/learning-lab" style="font-family:var(--font-body);font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-secondary);text-decoration:none;">Learning Lab</a>
-  <span class="nav-status">Building — 2026</span>
-</div>
+    <div class="nav-right">
+      <a href="/learning-lab" class="nav-lab-link">Learning Lab</a>
+      <span class="nav-status">Building — 2026</span>
+    </div>
   </div>
 </nav>
 
