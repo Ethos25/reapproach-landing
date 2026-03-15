@@ -55,10 +55,11 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 .w-divider span{font-family:'Quicksand',sans-serif;font-size:.58rem;color:var(--t2);opacity:.5;background:var(--bg);padding:0 10px;position:relative}
 
 /* WELCOME BEAT */
-.welcome-beat{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:1050;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;animation:wbIn .8s ease forwards}
-@keyframes wbIn{0%{opacity:0}30%{opacity:1}80%{opacity:1}100%{opacity:0}}
+.welcome-beat{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--bg);z-index:1050;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
 .wb-name{font-family:'Fredoka',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:8px}
-.wb-sub{font-family:'Quicksand',sans-serif;font-size:.9rem;color:var(--t2);font-weight:500;text-align:center}
+.wb-sub{font-family:'Quicksand',sans-serif;font-size:.9rem;color:var(--t2);font-weight:500;text-align:center;margin-bottom:24px}
+.wb-btn{padding:14px 32px;border-radius:14px;border:none;font-family:'Fredoka',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;background:linear-gradient(135deg,var(--cyan),var(--purple));color:var(--bg);transition:transform .15s}
+.wb-btn:active{transform:scale(.95)}
 
 /* SHARE CARD */
 .share-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,14,26,.92);z-index:850;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s}
@@ -142,12 +143,12 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 .ach-title{font-family:'Fredoka',sans-serif;font-size:.62rem;font-weight:700;color:#FFD54F;letter-spacing:.05em}
 
 /* ═══ TABS ═══ */
-.ltabs{position:relative;z-index:10;display:flex;justify-content:center;gap:0;margin:8px 16px 0;border-radius:12px;overflow:hidden;border:1.5px solid rgba(125,249,255,.15);background:rgba(255,255,255,.03)}
+.ltabs{position:relative;z-index:10;display:flex;justify-content:center;gap:0;margin:8px 16px 0;border-radius:12px;overflow:hidden;border:1.5px solid rgba(125,249,255,.15);background:rgba(255,255,255,.03);margin-bottom:4px}
 .ltab{flex:1;padding:9px 6px;font-family:'Fredoka',sans-serif;font-size:.72rem;font-weight:600;color:var(--t2);background:transparent;border:none;cursor:pointer;transition:all .3s;text-align:center}
 .ltab.active{color:var(--bg);background:linear-gradient(135deg,var(--cyan),var(--purple))}
 .ltab .lc{display:block;font-size:.55rem;font-weight:500;margin-top:1px;opacity:.7}
 .ltab.locked{opacity:.35;cursor:not-allowed}.ltab.locked::after{content:'🔒';font-size:.5rem;margin-left:2px}
-.ftabs{position:relative;z-index:10;display:flex;gap:6px;padding:0 16px 6px;overflow-x:auto;scrollbar-width:none}
+.ftabs{position:relative;z-index:10;display:flex;gap:6px;padding:0 16px 6px;overflow-x:auto;scrollbar-width:none;margin-top:10px}
 .ftabs::-webkit-scrollbar{display:none}
 .ftab{flex-shrink:0;padding:6px 12px;border-radius:18px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--t2);font-family:'Fredoka',sans-serif;font-size:.7rem;font-weight:600;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
 .ftab.active{color:var(--bg);border-color:transparent;transform:scale(1.05)}
@@ -169,15 +170,15 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 .c-sym{font-family:'Fredoka',sans-serif;font-size:2.6rem;font-weight:700;color:var(--cc);line-height:1;text-shadow:0 0 20px var(--cg),0 0 40px var(--cg)}
 .c-name{font-family:'Fredoka',sans-serif;font-size:.8rem;font-weight:600;color:var(--t1);text-align:center}
 .c-fam{position:absolute;top:6px;right:7px;font-family:'Quicksand',sans-serif;font-size:.48rem;font-weight:700;color:var(--cc);opacity:.55;text-transform:uppercase;letter-spacing:.04em;text-align:right;max-width:52px;line-height:1.2}
-.cw.undiscovered .cin{filter:brightness(.35) saturate(0)}.cw.undiscovered .c-sym{text-shadow:none}.cw.undiscovered .c-emoji{opacity:0}.cw.undiscovered .c-name{opacity:.3}.cw.undiscovered .c-fam{opacity:0}
-.cw.undiscovered::after{content:'?';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;font-weight:700;color:rgba(255,255,255,.12);pointer-events:none}
+.cw.undiscovered .cin{filter:brightness(.5) saturate(.1)}.cw.undiscovered .c-sym{text-shadow:none}.cw.undiscovered .c-emoji{opacity:0}.cw.undiscovered .c-name{opacity:.4}.cw.undiscovered .c-fam{opacity:0}
+.cw.undiscovered::after{content:'?';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2rem;font-weight:700;color:rgba(255,255,255,.25);pointer-events:none}
 
 /* ═══ DRAGON MAP ═══ */
 .dmap{position:relative;z-index:10;padding:8px 8px 80px;overflow-x:auto}
 .dmap-grid{display:grid;grid-template-columns:repeat(18,minmax(32px,1fr));grid-template-rows:repeat(10,32px);gap:2px;min-width:600px;margin:0 auto;max-width:800px}
 .dm-cell{border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;position:relative;font-family:'Fredoka',sans-serif;min-height:32px}
 .dm-cell:active{transform:scale(.9)}.dm-num{font-size:.38rem;font-weight:600;opacity:.6;line-height:1}.dm-sym{font-size:.65rem;font-weight:700;line-height:1.1}
-.dm-cell.undiscovered{filter:brightness(.3) saturate(0)}.dm-cell.undiscovered .dm-sym{opacity:.2}
+.dm-cell.undiscovered{filter:brightness(.45) saturate(.1)}.dm-cell.undiscovered .dm-sym{opacity:.3}
 .dm-label{font-family:'Quicksand',sans-serif;font-size:.5rem;font-weight:700;color:var(--t2);opacity:.5;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .dm-col-hint{position:relative;z-index:10;margin:0 8px 8px;padding:8px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(125,249,255,.06),rgba(199,146,234,.06));border:1px solid rgba(125,249,255,.1);text-align:center;display:none}
 .dm-col-hint.show{display:block;animation:fadeIn .3s ease}
@@ -211,32 +212,50 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 .match-skip{background:none;border:none;color:var(--t2);font-family:'Quicksand',sans-serif;font-size:.7rem;font-weight:600;cursor:pointer;opacity:.5;padding:8px}
 
 /* ═══ MODAL ═══ */
-.mov{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,14,26,.88);backdrop-filter:blur(10px);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mov{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,14,26,.88);backdrop-filter:blur(10px);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:48px 20px 20px;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto}
 .mov.active{opacity:1;pointer-events:auto}
 .mcard{width:100%;max-width:340px;border-radius:20px;background:var(--bg3);overflow:hidden;transform:scale(.9) translateY(16px);transition:transform .4s cubic-bezier(.34,1.56,.64,1);max-height:88vh;overflow-y:auto}
 .mov.active .mcard{transform:scale(1) translateY(0)}
-.mhdr{padding:18px 16px 14px;text-align:center;position:relative}
-.mhdr::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 30%,var(--cg) 0%,transparent 70%);opacity:.15}
-.mx{position:absolute;top:8px;right:10px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:var(--t2);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
-.m-emoji{font-size:1.8rem;position:relative;z-index:1}
-.m-sym{font-family:'Fredoka',sans-serif;font-size:2.4rem;font-weight:700;color:var(--cc);text-shadow:0 0 24px var(--cg);position:relative;z-index:1;line-height:1.1}
-.m-name{font-family:'Fredoka',sans-serif;font-size:1.2rem;font-weight:700;color:var(--t1);position:relative;z-index:1}
-.m-meta{display:flex;gap:8px;justify-content:center;margin-top:5px;position:relative;z-index:1;flex-wrap:wrap}
-.m-meta span{font-family:'Quicksand',sans-serif;font-size:.62rem;font-weight:600;padding:3px 8px;border-radius:8px;background:rgba(255,255,255,.08);color:var(--t2)}
+.mhdr{padding:16px 16px 12px;position:relative;display:flex;align-items:center;gap:12px;text-align:left}
+.mhdr::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 40%,var(--cg) 0%,transparent 70%);opacity:.15;pointer-events:none}
+.mx{position:absolute;top:8px;right:10px;width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:var(--t2);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
+.m-emoji{font-size:2.4rem;position:relative;z-index:1;flex-shrink:0;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.m-info{position:relative;z-index:1;display:flex;flex-direction:column;gap:1px}
+.m-sym{font-family:'Fredoka',sans-serif;font-size:1.8rem;font-weight:700;color:var(--cc);text-shadow:0 0 20px var(--cg);line-height:1}
+.m-name{font-family:'Fredoka',sans-serif;font-size:1rem;font-weight:700;color:var(--t1)}
+.m-meta{display:flex;gap:6px;margin-top:3px;position:relative;z-index:1;flex-wrap:wrap}
+.m-meta span{font-family:'Quicksand',sans-serif;font-size:.58rem;font-weight:600;padding:2px 7px;border-radius:6px;background:rgba(255,255,255,.08);color:var(--t2)}
 .m-body{padding:14px 18px 20px;display:flex;flex-direction:column;gap:12px}
 .m-lbl{font-family:'Quicksand',sans-serif;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--cc);opacity:.7}
 .m-fact{font-family:'Quicksand',sans-serif;font-size:.95rem;font-weight:600;color:var(--t1);line-height:1.45}
 .m-story{font-family:'Quicksand',sans-serif;font-size:.82rem;font-weight:500;color:var(--t2);line-height:1.5}
-.m-eternatus{padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(125,249,255,.08),rgba(199,146,234,.08));border:1px solid rgba(125,249,255,.12);margin-top:2px}
+.m-eternatus{padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(125,249,255,.08),rgba(199,146,234,.08));border:1px solid rgba(125,249,255,.12);margin-top:14px}
 .m-eternatus p{font-family:'Quicksand',sans-serif;font-size:.78rem;color:var(--cyan);font-weight:600;line-height:1.4;font-style:italic}
 .m-speak{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px;border-radius:12px;border:1.5px solid var(--cb);background:var(--cbg);color:var(--cc);font-family:'Fredoka',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;min-height:44px}
-.m-combos{display:flex;flex-direction:column;gap:6px}
+.m-combos{display:flex;flex-direction:column;gap:6px;margin-top:8px}
 .m-combo{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--cb)}
 .m-combo-eq{font-family:'Quicksand',sans-serif;font-size:.72rem;font-weight:700;color:var(--cc)}.m-combo-arrow{font-size:.85rem;color:var(--cc);opacity:.7}
 .m-combo-result{font-family:'Quicksand',sans-serif;font-size:.78rem;font-weight:600;color:var(--t1)}
 
 /* ═══ CELEBRATIONS ═══ */
 .celeb{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:600}
+/* NEW ELEMENT TOAST */
+.toast{position:fixed;top:6px;left:16px;right:16px;z-index:610;padding:7px 14px;background:var(--bg3);border:1px solid rgba(125,249,255,.12);border-left:3px solid var(--cyan);border-radius:10px;display:flex;align-items:center;gap:8px;transform:translateY(calc(-100% - 16px));transition:transform .35s cubic-bezier(.34,1.56,.64,1);pointer-events:auto;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+.toast.show{transform:translateY(0)}
+.toast-emoji{font-size:1rem}
+.toast-text{font-family:'Fredoka',sans-serif;font-size:.72rem;font-weight:600;color:var(--t1)}
+.toast-fam{font-family:'Quicksand',sans-serif;font-size:.55rem;font-weight:600;color:var(--t2);margin-left:auto}
+/* FAMILY COMPLETE OVERLAY */
+.fam-celeb{position:fixed;top:0;left:0;width:100%;height:100%;z-index:700;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .5s}
+.fam-celeb.active{opacity:1;pointer-events:auto}
+.fam-celeb-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(11,14,26,.92)}
+.fam-celeb-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;opacity:.25;filter:blur(60px)}
+.fam-celeb-content{position:relative;z-index:1;text-align:center;max-width:340px}
+.fam-celeb-badge{font-family:'Fredoka',sans-serif;font-size:.7rem;font-weight:700;padding:6px 16px;border-radius:20px;display:inline-block;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase}
+.fam-celeb-title{font-family:'Fredoka',sans-serif;font-size:1.8rem;font-weight:700;color:var(--t1);margin-bottom:8px;line-height:1.2}
+.fam-celeb-quote{font-family:'Quicksand',sans-serif;font-size:.9rem;font-weight:600;color:var(--cyan);line-height:1.5;font-style:italic;margin-bottom:12px}
+.fam-celeb-dragon{font-family:'Quicksand',sans-serif;font-size:.7rem;color:var(--t2);font-weight:500}
+/* OLD CELEB TEXT (kept for achievements) */
 .celeb-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Fredoka',sans-serif;font-size:1.3rem;font-weight:700;color:var(--cyan);text-shadow:0 0 20px var(--cyan);opacity:0;animation:celebPop .8s cubic-bezier(.34,1.56,.64,1) forwards}
 @keyframes celebPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}30%{opacity:1;transform:translate(-50%,-50%) scale(1.2)}100%{opacity:0;transform:translate(-50%,-60%) scale(1)}}
 .mega-celeb{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,14,26,.95);z-index:900;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
@@ -249,6 +268,55 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 .particle{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:600;animation:pf .6s cubic-bezier(.25,.46,.45,.94) forwards}
 @keyframes pf{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0)}}
 .hidden{display:none!important}
+
+/* ARC BANNER */
+.arc-banner{position:relative;z-index:10;margin:8px 16px 0;padding:12px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(125,249,255,.06),rgba(199,146,234,.06));border:1.5px solid rgba(125,249,255,.12);text-align:center;animation:fadeIn .4s ease}
+.arc-title{font-family:'Fredoka',sans-serif;font-size:.85rem;font-weight:700;color:var(--t1);margin-bottom:4px}
+.arc-desc{font-family:'Quicksand',sans-serif;font-size:.72rem;color:var(--cyan);font-weight:600;line-height:1.4;font-style:italic}
+.arc-progress{font-family:'Quicksand',sans-serif;font-size:.6rem;color:var(--t2);margin-top:6px;font-weight:600}
+.arc-complete{animation:celebPop .8s cubic-bezier(.34,1.56,.64,1) forwards}
+
+/* WELCOME BACK */
+.wb-return{position:relative;z-index:10;margin:0 16px 4px;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(125,249,255,.05),rgba(199,146,234,.05));border:1px solid rgba(125,249,255,.08);text-align:center;animation:fadeIn .5s ease;cursor:pointer}
+.wb-return p{font-family:'Quicksand',sans-serif;font-size:.78rem;color:var(--cyan);font-weight:600;line-height:1.4;font-style:italic}
+
+/* SESSION SUMMARY */
+.sess-summary{width:100%;border-radius:14px;background:var(--bg3);border:1.5px solid rgba(125,249,255,.1);padding:16px;text-align:left}
+.sess-summary h3{font-family:'Fredoka',sans-serif;font-size:.75rem;font-weight:600;color:var(--t2);margin-bottom:8px}
+.sess-item{font-family:'Quicksand',sans-serif;font-size:.72rem;color:var(--t1);line-height:1.6;font-weight:500}
+
+/* RADIANT ELEMENTS */
+@keyframes rainbowShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes sparkleRotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes textShimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.mhdr.radiant{background:linear-gradient(135deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff,#9b59b6,#ff6b6b)!important;background-size:300% 300%;animation:rainbowShift 3s ease infinite}
+.mhdr.radiant .m-sym{background:linear-gradient(90deg,#fff,#ffd93d,#fff);background-size:400% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:textShimmer 2s linear infinite}
+.radiant-badge{font-family:'Fredoka',sans-serif;font-size:.55rem;font-weight:700;color:#FFD93D;background:rgba(255,217,61,.15);padding:3px 10px;border-radius:8px;display:inline-block;margin-bottom:4px;letter-spacing:.06em;position:relative;z-index:1}
+.radiant-sparkle{position:absolute;top:50%;left:50%;width:80px;height:80px;pointer-events:none;z-index:0;animation:sparkleRotate 4s linear infinite}
+.radiant-sparkle::before,.radiant-sparkle::after{content:'✨';position:absolute;font-size:.7rem}
+.radiant-sparkle::before{top:0;left:50%;transform:translateX(-50%)}
+.radiant-sparkle::after{bottom:0;right:0}
+.card-radiant{position:absolute;top:4px;left:4px;font-size:.5rem;z-index:3;opacity:.8}
+
+/* BUDDY BADGE */
+.buddy-wrap{position:absolute;top:6px;right:10px;display:flex;flex-direction:column;align-items:center;gap:2px;z-index:2;cursor:pointer}
+.buddy-badge{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;border:2px solid rgba(125,249,255,.2);background:rgba(255,255,255,.04);transition:all .3s;animation:buddyPulse 3s ease-in-out infinite}
+.buddy-wrap:active .buddy-badge{transform:scale(.9)}
+.buddy-badge.empty{font-size:.8rem;opacity:.3;animation:none}
+.buddy-label{font-family:'Quicksand',sans-serif;font-size:.45rem;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:.06em;opacity:.5}
+.buddy-wrap.has-buddy .buddy-label{opacity:.8;color:var(--cyan)}
+@keyframes buddyPulse{0%,100%{box-shadow:0 0 8px rgba(125,249,255,.1)}50%{box-shadow:0 0 16px rgba(125,249,255,.25)}}
+
+/* WILD ELEMENT BANNER */
+.wild-banner{position:relative;z-index:10;margin:6px 16px 0;padding:12px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(255,213,79,.06),rgba(125,249,255,.06));border:1.5px solid rgba(255,213,79,.2);display:flex;align-items:center;gap:12px;animation:fadeIn .5s ease;cursor:pointer}
+.wild-banner:active{transform:scale(.98)}
+.wild-text{flex:1;font-family:'Quicksand',sans-serif;font-size:.78rem;color:#FFD54F;font-weight:600;line-height:1.4}
+.wild-btn{font-family:'Fredoka',sans-serif;font-size:.75rem;font-weight:700;color:var(--bg);background:linear-gradient(135deg,#FFD54F,var(--cyan));padding:8px 16px;border-radius:10px;border:none;cursor:pointer;white-space:nowrap}
+.wild-reveal{text-align:center;padding:20px 16px}
+.wild-reveal .wr-emoji{font-size:2.4rem;animation:ci .4s cubic-bezier(.34,1.56,.64,1)}
+.wild-reveal .wr-sym{font-family:'Fredoka',sans-serif;font-size:1.8rem;font-weight:700;line-height:1}
+.wild-reveal .wr-name{font-family:'Fredoka',sans-serif;font-size:1rem;font-weight:600;color:var(--t1);margin-top:2px}
+.wild-reveal .wr-speech{font-family:'Quicksand',sans-serif;font-size:.72rem;color:var(--cyan);font-weight:600;font-style:italic;margin-top:8px}
 
 @media(max-width:500px){.hdr h1{font-size:.65rem}.mbar svg.dragon-hero{width:120px;height:94px}.grid{grid-template-columns:repeat(2,1fr);gap:8px;padding:0 12px 80px}.ftabs{padding:0 12px 6px}.mbar{margin:0 12px 6px;padding:4px 12px 10px}.ltabs{margin:6px 12px 0}.fbio{margin:0 12px 8px}.w-title{font-size:1.6rem}}
 @media(min-width:768px){.mbar svg.dragon-hero{width:160px;height:125px}.grid{grid-template-columns:repeat(4,1fr);max-width:680px;margin:0 auto}.ftabs{justify-content:center;flex-wrap:wrap}.mbar{max-width:680px;margin:0 auto 8px}.ltabs{max-width:560px;margin:8px auto 0}.fbio{max-width:680px;margin:0 auto 10px}}
@@ -308,19 +376,25 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
       <div class="w-field">
         <label>Favorite Food</label>
         <input type="text" id="wFood" placeholder="e.g. pizza, mac and cheese" maxlength="30" autocomplete="off">
-        <div class="w-hint">Sodium, Calcium, Iron anchor to this food</div>
+        <div class="w-hint">Elements will reference this food in their stories</div>
       </div>
       <div class="w-field">
         <label>Pet's Name</label>
         <input type="text" id="wPet" placeholder="e.g. Max, Luna" maxlength="20" autocomplete="off">
-        <div class="w-hint">Carbon, Iron, Calcium anchor to your pet</div>
+        <div class="w-hint">Elements will mention your pet by name</div>
       </div>
       <div class="w-field">
         <label>Favorite Color</label>
         <input type="text" id="wColor" placeholder="e.g. blue, red, green, purple" maxlength="15" autocomplete="off">
-        <div class="w-hint">Maps to the element that MAKES that color</div>
+        <div class="w-hint">We'll match it to the element that creates it</div>
+      </div>
+      <div class="w-field">
+        <label>Birthday (day of month)</label>
+        <input type="number" id="wBday" placeholder="e.g. 6, 15, 23" min="1" max="31" autocomplete="off">
+        <div class="w-hint">Your child gets a personal Element Buddy based on their birthday</div>
       </div>
       <button class="w-start" id="wStart" disabled>Begin the Quest</button>
+      <div class="w-hint" id="wStartHint" style="text-align:center;margin-top:4px">Enter name and toy to begin</div>
     </div>
     <div class="w-parent">
       <p><strong>For parents:</strong> Elementum teaches all 118 elements through a character-driven collection quest. Your child discovers elements, restores a dragon's powers, unlocks Mega Evolution at 20, and earns titles up to "Eternal Dragon" at 118. Progress saves automatically. No ads. No accounts. Just chemistry disguised as adventure.</p>
@@ -330,8 +404,30 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 
 <!-- WELCOME BEAT -->
 <div class="welcome-beat hidden" id="welcomeBeat">
+  <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" style="width:160px;height:125px;margin-bottom:16px;animation:dragonFloat 3s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(125,249,255,.3))">
+    <defs><filter id="wbg"><feGaussianBlur stdDeviation="3" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="wbg2"><feGaussianBlur stdDeviation="5" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter><radialGradient id="wbbG" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#7DF9FF" stop-opacity=".3"/><stop offset="100%" stop-color="#C792EA" stop-opacity=".05"/></radialGradient><linearGradient id="wbwG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C792EA" stop-opacity=".4"/><stop offset="100%" stop-color="#7DF9FF" stop-opacity=".1"/></linearGradient></defs>
+    <path d="M58 65 Q28 28 12 42 Q2 52 18 64 Q8 48 22 38 Q34 26 44 48Z" fill="url(#wbwG)" stroke="#C792EA" stroke-width="1.5" filter="url(#wbg)" opacity=".8"><animate attributeName="d" dur="4s" repeatCount="indefinite" values="M58 65 Q28 28 12 42 Q2 52 18 64 Q8 48 22 38 Q34 26 44 48Z;M58 65 Q26 33 10 46 Q0 56 16 66 Q6 51 20 41 Q32 30 44 50Z;M58 65 Q28 28 12 42 Q2 52 18 64 Q8 48 22 38 Q34 26 44 48Z"/></path>
+    <path d="M142 65 Q172 28 188 42 Q198 52 182 64 Q192 48 178 38 Q166 26 156 48Z" fill="url(#wbwG)" stroke="#C792EA" stroke-width="1.5" filter="url(#wbg)" opacity=".8"><animate attributeName="d" dur="4s" repeatCount="indefinite" values="M142 65 Q172 28 188 42 Q198 52 182 64 Q192 48 178 38 Q166 26 156 48Z;M142 65 Q174 33 190 46 Q200 56 184 66 Q194 51 180 41 Q168 30 156 50Z;M142 65 Q172 28 188 42 Q198 52 182 64 Q192 48 178 38 Q166 26 156 48Z"/></path>
+    <ellipse cx="100" cy="75" rx="30" ry="22" fill="url(#wbbG)" filter="url(#wbg2)"/>
+    <ellipse cx="100" cy="75" rx="24" ry="16" fill="none" stroke="#7DF9FF" stroke-width="1.2" opacity=".4" filter="url(#wbg)"/>
+    <path d="M86 58 L90 51 L94 58 L100 49 L106 58 L110 51 L114 58" fill="none" stroke="#C792EA" stroke-width="2" stroke-linecap="round" filter="url(#wbg)" opacity=".7"/>
+    <path d="M84 66 Q78 52 81 42 Q84 36 91 33" fill="none" stroke="#7DF9FF" stroke-width="2.5" stroke-linecap="round" filter="url(#wbg)"/>
+    <path d="M80 28 Q84 32 87 36 Q92 42 96 36 Q99 32 103 28" fill="none" stroke="#7DF9FF" stroke-width="2.5" stroke-linecap="round" filter="url(#wbg)"/>
+    <path d="M91 33 Q87 26 80 28 Q76 30 74 26 L71 18" fill="none" stroke="#C792EA" stroke-width="2" stroke-linecap="round" filter="url(#wbg)"/>
+    <path d="M92 33 Q96 26 103 28 Q107 30 109 26 L112 18" fill="none" stroke="#C792EA" stroke-width="2" stroke-linecap="round" filter="url(#wbg)"/>
+    <ellipse cx="86" cy="32" rx="4" ry="3.5" fill="#7DF9FF" filter="url(#wbg)"><animate attributeName="ry" values="3.5;3.5;.4;3.5;3.5" dur="4s" repeatCount="indefinite" keyTimes="0;.45;.5;.55;1"/></ellipse>
+    <ellipse cx="97" cy="32" rx="4" ry="3.5" fill="#7DF9FF" filter="url(#wbg)"><animate attributeName="ry" values="3.5;3.5;.4;3.5;3.5" dur="4s" repeatCount="indefinite" keyTimes="0;.45;.5;.55;1" begin=".1s"/></ellipse>
+    <circle cx="87" cy="31.5" r="2" fill="#fff"/><circle cx="98" cy="31.5" r="2" fill="#fff"/>
+    <circle cx="100" cy="72" r="6" fill="none" stroke="#FFD54F" stroke-width="1.5" opacity=".6" filter="url(#wbg)"><animate attributeName="opacity" values=".5;.8;.5" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="72" r="3" fill="#FFD54F" opacity=".5"/>
+    <path d="M124 80 Q140 90 148 102 Q156 118 146 128" fill="none" stroke="#7DF9FF" stroke-width="2.2" stroke-linecap="round" filter="url(#wbg)"><animate attributeName="d" dur="3s" repeatCount="indefinite" values="M124 80 Q140 90 148 102 Q156 118 146 128;M124 80 Q138 94 144 108 Q148 122 142 130;M124 80 Q140 90 148 102 Q156 118 146 128"/></path>
+    <circle r="3" fill="#7DF9FF" opacity=".5"><animateMotion dur="3s" repeatCount="indefinite" path="M100,55 A28,28 0 1,1 99.99,55"/></circle>
+    <circle r="2.5" fill="#C792EA" opacity=".4"><animateMotion dur="4.2s" repeatCount="indefinite" path="M100,72 A35,18 0 1,1 99.99,72"/></circle>
+    <circle r="2" fill="#FFD54F" opacity=".3"><animateMotion dur="5.5s" repeatCount="indefinite" path="M100,65 A22,30 0 1,1 99.99,65"/></circle>
+  </svg>
   <div class="wb-name" id="wbName"></div>
   <div class="wb-sub">Eternatus is waiting for you.</div>
+  <button class="wb-btn" id="wbBtn">Next →</button>
 </div>
 
 <!-- INTRO -->
@@ -363,10 +459,11 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 
 <!-- MAIN APP -->
 <div id="app" class="hidden">
-<header class="hdr"><div class="hdr-row"><h1>Elementum</h1><button class="reset-btn" id="resetBtn">↺ Reset</button></div></header>
+<header class="hdr"><div class="hdr-row"><h1>Elementum</h1></div></header>
 <div class="reset-confirm hidden" id="resetConfirm"><p>Start Elementum from scratch?</p><p class="warn">This erases ALL progress. Eternatus loses all powers.</p><div class="reset-btns"><button class="rbtn-cancel" id="resetCancel">Keep Going</button><button class="rbtn-reset" id="resetYes">Reset Everything</button></div></div>
 
 <div class="mbar" id="mbar" data-tier="1">
+  <div class="buddy-wrap" id="buddyWrap" onclick="onBuddyTap()"><div class="buddy-badge empty" id="buddyBadge">?</div><div class="buddy-label" id="buddyLabel">BUDDY</div></div>
   <svg class="dragon-hero" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
     <defs><filter id="gm"><feGaussianBlur stdDeviation="2.5" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="gm2"><feGaussianBlur stdDeviation="4" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter><radialGradient id="bG2" cx="50%" cy="40%" r="50%"><stop offset="0%" stop-color="#7DF9FF" stop-opacity=".25"/><stop offset="100%" stop-color="#C792EA" stop-opacity=".03"/></radialGradient><linearGradient id="wG2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C792EA" stop-opacity=".35"/><stop offset="100%" stop-color="#7DF9FF" stop-opacity=".08"/></linearGradient></defs>
     <path d="M58 65 Q28 28 12 42 Q2 52 18 64 Q8 48 22 38 Q34 26 44 48Z" fill="url(#wG2)" stroke="#C792EA" stroke-width="1.2" filter="url(#gm)" opacity=".7"><animate attributeName="d" dur="4s" repeatCount="indefinite" values="M58 65 Q28 28 12 42 Q2 52 18 64 Q8 48 22 38 Q34 26 44 48Z;M58 65 Q26 33 10 46 Q0 56 16 66 Q6 51 20 41 Q32 30 44 50Z;M58 65 Q28 28 12 42 Q2 52 18 64 Q8 48 22 38 Q34 26 44 48Z"/></path>
@@ -392,6 +489,10 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
   <div class="ach-row"><span class="ach-title" id="achTitle"></span></div>
 </div>
 
+<div class="wb-return hidden" id="wbReturn" onclick="this.classList.add('hidden')"><p id="wbReturnText"></p></div>
+<div class="wild-banner hidden" id="wildBanner"><div class="wild-text" id="wildText">🐉 Eternatus senses a wild element nearby!</div><button class="wild-btn" id="wildBtn">Reveal →</button></div>
+<div class="arc-banner hidden" id="arcBanner"><div class="arc-title" id="arcTitle"></div><div class="arc-desc" id="arcDesc"></div><div class="arc-progress" id="arcProg"></div></div>
+
 <div class="ltabs" id="ltabs">
   <button class="ltab active" data-lv="1">Starters<span class="lc">20 Elements</span></button>
   <button class="ltab" data-lv="2">Mega Evolution<span class="lc">All 118</span></button>
@@ -404,7 +505,7 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 <div class="fbio" id="fbio"><div class="fbio-text" id="fbioText"></div></div>
 <div class="cnt" id="cnt"></div>
 <div class="grid" id="grid"></div>
-<div class="dmap hidden" id="dmap"><div class="dm-col-hint" id="dmColHint"><p id="dmColText"></p></div><div class="dmap-grid" id="dmapGrid"></div></div>
+<div class="dmap hidden" id="dmap"><div class="ftabs" id="dmFtabs" style="margin-top:8px"></div><div class="fbio" id="dmFbio"><div class="fbio-text" id="dmFbioText"></div></div><div class="dm-col-hint" id="dmColHint"><p id="dmColText"></p></div><div class="dmap-grid" id="dmapGrid"></div></div>
 <div class="eotd hidden" id="eotd"></div>
 <div class="profile hidden" id="profile"></div>
 </div>
@@ -423,8 +524,10 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 </div>
 
 <!-- MODAL -->
-<div class="mov" id="mov"><div class="mcard" id="mc"><button class="mx" id="mx">&times;</button><div class="mhdr" id="mhdr"><div class="m-emoji" id="me"></div><div class="m-sym" id="ms"></div><div class="m-name" id="mn"></div><div class="m-meta" id="mm"></div></div><div class="m-body"><div><div class="m-lbl">Superpower</div><div class="m-fact" id="mf"></div></div><div><div class="m-lbl">In Your World</div><div class="m-story" id="mst"></div></div><div id="mCombosWrap" style="display:none"><div class="m-lbl">⚡ Mega Combos</div><div class="m-combos" id="mCombos"></div></div><div class="m-eternatus" id="metern" style="display:none"><p id="meternText"></p></div><button class="m-speak" id="mspk"><span>🔊</span><span>Hear My Name</span></button></div></div></div>
+<div class="mov" id="mov"><div class="mcard" id="mc"><button class="mx" id="mx">&times;</button><div class="mhdr" id="mhdr"><div class="m-emoji" id="me"></div><div class="m-info"><div class="m-sym" id="ms"></div><div class="m-name" id="mn"></div><div class="m-meta" id="mm"></div></div></div><div class="m-body"><div><div class="m-lbl">Superpower</div><div class="m-fact" id="mf"></div></div><div><div class="m-lbl">In Your World</div><div class="m-story" id="mst"></div></div><div id="mCombosWrap" style="display:none"><div class="m-lbl">⚡ Mega Combos</div><div class="m-combos" id="mCombos"></div></div><div class="m-eternatus" id="metern" style="display:none"><p id="meternText"></p></div><button class="m-speak" id="mspk"><span>🔊</span><span>Hear My Name</span></button></div></div></div>
 <div class="celeb" id="celeb"></div>
+<div class="toast" id="toast" onclick="this.classList.remove('show')"><div class="toast-emoji" id="toastEmoji"></div><div class="toast-text" id="toastText"></div><div class="toast-fam" id="toastFam"></div></div>
+<div class="fam-celeb" id="famCeleb"><div class="fam-celeb-bg"></div><div class="fam-celeb-glow" id="famGlow"></div><div class="fam-celeb-content"><div class="fam-celeb-badge" id="famBadge"></div><div class="fam-celeb-title" id="famTitle"></div><div class="fam-celeb-quote" id="famQuote"></div><div class="fam-celeb-dragon">🐉 Professor Eternatus</div><button style="margin-top:20px;padding:12px 32px;border-radius:12px;border:none;font-family:'Fredoka',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;background:rgba(255,255,255,.1);color:var(--t1)" id="famClose">Continue →</button></div></div>
 <div class="mega-celeb" id="megaCeleb"><div class="mc-title" id="mcTitle">MEGA EVOLUTION UNLOCKED!</div><div class="mc-sub" id="mcSub"></div><button class="mc-btn" id="mcBtn">Enter Mega Evolution →</button></div>
 <div class="match-overlay" id="matchOv"><div class="match-q" id="matchQ"></div><div class="match-opts" id="matchOpts"></div><div class="match-result" id="matchRes"></div><button class="match-skip" id="matchSkip">Skip for now</button></div>
 
@@ -433,15 +536,19 @@ html,body{font-family:'Fredoka',sans-serif;background:var(--bg);color:var(--t1);
 // PERSONALIZATION
 // ═══════════════════════════════════════
 const SK='elementum_v2';
-let P={name:'Explorer',toy:'blanket',food:'',pet:'',color:''};
+let P={name:'Explorer',toy:'blanket',food:'',pet:'',color:'',bday:0};
 let state;
 
 function loadAll(){
   try{const d=JSON.parse(localStorage.getItem(SK))||{};state=d.state||{};P=d.profile||P}catch(e){state={}}
   if(!state.disc)state.disc=[];if(!state.fams)state.fams=[];if(!state.intro)state.intro=false;
   if(!state.megaUnlocked)state.megaUnlocked=false;if(!state.achShown)state.achShown=[];
-  if(!state.matchesPlayed)state.matchesPlayed=0;if(!state.matchesCorrect)state.matchesCorrect=0;if(!state.firstDiscTime)state.firstDiscTime=null;if(!state.matchesCorrect)state.matchesCorrect=0;
-  if(!state.firstDiscTime)state.firstDiscTime=null;
+  if(!state.matchesPlayed)state.matchesPlayed=0;if(!state.matchesCorrect)state.matchesCorrect=0;if(!state.firstDiscTime)state.firstDiscTime=null;
+  if(!state.currentArc)state.currentArc=0;if(!state.arcComplete)state.arcComplete=[];
+  if(!state.lastVisit)state.lastVisit=Date.now();if(!state.sessionDisc)state.sessionDisc=[];
+  if(!state.megaTourDone)state.megaTourDone=false;if(!state.lastWild)state.lastWild=0;
+  if(!state.radiants)state.radiants=[];if(!state.whispersShown)state.whispersShown=[];
+  if(!state.combosReacted)state.combosReacted=[];if(!state.secret119)state.secret119=false;
 }
 function saveAll(){try{localStorage.setItem(SK,JSON.stringify({state,profile:P}))}catch(e){}}
 function isDisc(n){return state.disc.includes(n)}
@@ -653,7 +760,7 @@ function showMegaCeleb(){
   mc.classList.add('active');
   playTone(262,'sine',.15);setTimeout(()=>playTone(392,'sine',.15),120);setTimeout(()=>playTone(523,'sine',.15),240);setTimeout(()=>playTone(659,'sine',.2),380);setTimeout(()=>playTone(784,'sine',.2),520);setTimeout(()=>playTone(1047,'sine',.3),680);
   for(let i=0;i<5;i++)setTimeout(()=>bigBurst(innerWidth/2+(Math.random()*100-50),innerHeight/2+(Math.random()*100-50),['#7DF9FF','#C792EA','#FFD54F','#66BB6A','#EF5350'][i]),i*200);
-  document.getElementById('mcBtn').onclick=()=>{mc.classList.remove('active');curLv='2';curFam='all';document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.ltab')[1].classList.add('active');updateTabLocks();renderAll();updateMascot('all')};
+  document.getElementById('mcBtn').onclick=()=>{mc.classList.remove('active');curLv='2';curFam='all';document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.ltab')[1].classList.add('active');updateTabLocks();renderAll();updateMascot('all');runMegaTour()};
 }
 function updateTabLocks(){
   const tabs=document.querySelectorAll('.ltab');
@@ -663,8 +770,299 @@ function updateTabLocks(){
 function playMegaSwitch(){playTone(262,'sine',.1,.1);setTimeout(()=>playTone(330,'sine',.1,.1),80);setTimeout(()=>playTone(523,'sine',.2,.1),180)}
 
 // ═══════════════════════════════════════
-// PROFILE TAB
+// GUIDED FAMILY ARCS (L1)
 // ═══════════════════════════════════════
+const ARC_ORDER=[
+  {fam:'lifemaker',title:'Chapter 1: The Life Makers',intro:"These are the building blocks of everything alive. You, me, trees, {toy}. Find them all and my life force returns!",done:"Life energy floods through me! The Life Makers are COMPLETE!"},
+  {fam:'noble',title:'Chapter 2: The Glow Squad',intro:"My wings need their light back! The Glow Squad are loners who never react with anyone. But they GLOW! Find them!",done:"My wings shimmer with new light! The Glow Squad is COMPLETE!"},
+  {fam:'explosion',title:'Chapter 3: The Explosion Squad',intro:"CAREFUL, {name}! These are dangerous. Drop them in water and BOOM! But I need their fire power. Can you handle it?",done:"FIRE POWER RESTORED! The Explosion Squad is COMPLETE! Stand back!"},
+  {fam:'warrior',title:'Chapter 4: The Metal Warriors',intro:"My biggest army! These metals build everything. Bridges, coins, jewelry, rockets. I need ALL of them, {name}!",done:"My armor is UNBREAKABLE! The Metal Warriors are COMPLETE!"},
+  {fam:'earth',title:'Chapter 5: Earth Builders',intro:"Strong and steady like the ground beneath your feet. I need this foundation, {name}!",done:"The ground trembles beneath me! Earth Builder power: RESTORED!"},
+  {fam:'halfhalf',title:'Chapter 6: The Half-and-Halfs',intro:"The tricksters! Half metal, half not. They can't pick a side, but I need their cleverness!",done:"Both sides of my power unite! The trickster is MINE!"},
+  {fam:'shifter',title:'Chapter 7: Shape Shifters',intro:"Sneaky metals that bend and change. Soft but very clever. I need this one, {name}!",done:"My form shifts and flows! Shape Shifter power: ABSORBED!"},
+  {fam:'saltmaker',title:'Chapter 8: Salt Makers',intro:"Fierce and stinky! This one fights germs and never apologizes. The last piece of my Starter power!",done:"My breath burns with fierce energy! The Salt Maker is MINE!"}
+];
+function getArcL1Els(fam){return E.filter(el=>el.l1&&el.f===fam)}
+function getArcRemaining(fam){return getArcL1Els(fam).filter(el=>!isDisc(el.num))}
+function getCurrentArc(){return state.currentArc<ARC_ORDER.length?ARC_ORDER[state.currentArc]:null}
+function updateArcBanner(){
+  const arc=getCurrentArc();const banner=document.getElementById('arcBanner');
+  if(!arc||curLv!=='1'){banner.classList.add('hidden');return}
+  const els=getArcL1Els(arc.fam);const found=els.filter(el=>isDisc(el.num)).length;
+  if(found>=els.length){banner.classList.add('hidden');return}
+  banner.classList.remove('hidden');
+  document.getElementById('arcTitle').textContent=arc.title;
+  document.getElementById('arcTitle').style.color=F[arc.fam].c;
+  document.getElementById('arcDesc').textContent=T(arc.intro);
+  document.getElementById('arcProg').textContent=found+' of '+els.length+' found';
+  banner.style.borderColor=F[arc.fam].bd;
+}
+function checkArcComplete(){
+  const arc=getCurrentArc();if(!arc)return false;
+  const els=getArcL1Els(arc.fam);const allFound=els.every(el=>isDisc(el.num));
+  if(allFound&&!state.arcComplete.includes(arc.fam)){
+    state.arcComplete.push(arc.fam);
+    // Family completion celebration - FULL SCREEN
+    const fc=F[arc.fam];
+    showFamCeleb(arc.fam,fc.n+' COMPLETE!',T(arc.done),()=>{
+      state.currentArc++;saveAll();
+      const next=getCurrentArc();
+      if(next){
+        document.getElementById('mspText').textContent=T(next.intro);
+        updateArcBanner();
+      }else{
+        document.getElementById('arcBanner').classList.add('hidden');
+      }
+    });
+    document.getElementById('mspText').textContent=T(arc.done);
+    // Unique family audio
+    const famAudio={lifemaker:[440,523,659,784],noble:[880,1047,1319,1568],explosion:[150,200,120,180],warrior:[330,440,523,659],earth:[260,330,392,523],halfhalf:[600,700,800,900],shifter:[500,600,700,840],saltmaker:[700,840,1000,1200]};
+    const tones=famAudio[arc.fam]||[440,523,659,784];
+    tones.forEach((f,i)=>setTimeout(()=>playTone(f,fc.audio[1]||'sine',.2,.12),i*150));
+    triggerExcited();
+    saveAll();return true;
+  }
+  return false;
+}
+
+// ═══════════════════════════════════════
+// MEGA EVOLUTION MINI-TOUR
+// ═══════════════════════════════════════
+const MEGA_TOUR=[
+  {num:3,speech:"Welcome to Mega Evolution! Meet Lithium. I power every battery in every device. The iPad? Me."},
+  {num:60,speech:"Neodymium! From the Hidden Powers family. My magnets are inside every headphone and speaker you own."},
+  {num:92,speech:T("Uranium! The Radioactive Force. One tiny piece of me has more energy than TONS of coal. Welcome to the big leagues, {name}.")}
+];
+function runMegaTour(){
+  if(state.megaTourDone)return;state.megaTourDone=true;saveAll();
+  let step=0;
+  function advanceMT(){
+    if(step>=MEGA_TOUR.length){return}
+    const mt=MEGA_TOUR[step];const el=EL[mt.num];const fc=F[el.f];
+    discover(el.num);discoverFam(el.f);
+    document.getElementById('mspText').textContent=T(mt.speech);
+    speakName(el.n);playFamilySound(el.f);triggerExcited();
+    bigBurst(innerWidth/2,innerHeight/3,fc.c);
+    step++;
+    if(step<MEGA_TOUR.length)setTimeout(advanceMT,3000);
+    else{setTimeout(()=>{document.getElementById('mspText').textContent=T('98 more elements await you, {name}. Explore any family you want!');updatePower();renderAll()},3000)}
+  }
+  setTimeout(advanceMT,1500);
+}
+
+// ═══════════════════════════════════════
+// WELCOME BACK
+// ═══════════════════════════════════════
+function checkWelcomeBack(){
+  if(!state.intro||!state.firstDiscTime)return;
+  const hours=(Date.now()-state.lastVisit)/3600000;
+  state.lastVisit=Date.now();state.sessionDisc=[];saveAll();
+  if(hours>=4){
+    const remaining=118-state.disc.length;
+    const wb=document.getElementById('wbReturn');
+    const text=remaining>0?T('{name}! You\'re back! I missed you. We have '+remaining+' elements to go. Ready?'):T('{name}! The Eternal Dragon welcomes you back!');
+    document.getElementById('wbReturnText').textContent='\uD83D\uDC09 Eternatus: "'+text+'"';
+    wb.classList.remove('hidden');
+    playTone(440,'sine',.1,.06);setTimeout(()=>playTone(660,'sine',.12,.06),150);
+    setTimeout(()=>wb.classList.add('hidden'),6000);
+  }
+}
+
+// ═══════════════════════════════════════
+// BIRTHDAY ELEMENT BUDDY
+// ═══════════════════════════════════════
+function getBuddyElement(){if(!P.bday||P.bday<1||P.bday>31)return null;return EL[P.bday]||null}
+function renderBuddy(){
+  const badge=document.getElementById('buddyBadge');const wrap=document.getElementById('buddyWrap');const el=getBuddyElement();
+  if(!el){badge.classList.add('empty');badge.textContent='?';wrap.classList.remove('has-buddy');return}
+  const fc=F[el.f];badge.classList.remove('empty');badge.textContent=el.e;
+  badge.style.borderColor=fc.c;badge.style.background=fc.bg;wrap.classList.add('has-buddy');
+}
+function onBuddyTap(){
+  const el=getBuddyElement();
+  if(!el){document.getElementById('mspText').textContent='Set your birthday in a new quest to meet your Element Buddy!';return}
+  const fc=F[el.f];const isFound=isDisc(el.num);
+  if(!isFound){discover(el.num);discoverFam(el.f);updatePower();renderAll()}
+  // Special buddy modal
+  openModal(el,!isFound,false);
+  // Override Eternatus text with buddy speech
+  const etT=document.getElementById('meternText');
+  if(isFound){
+    etT.textContent='\u{1F49C} Eternatus: "'+T(el.n+' is YOUR element, {name}. Born on the '+P.bday+ordSuf(P.bday)+', atomic number '+el.num+'. You two are bonded forever.')+'"';
+  }else{
+    etT.textContent='\u{1F49C} Eternatus: "'+T('{name}... meet YOUR element. '+el.n+'. Born on the '+P.bday+ordSuf(P.bday)+', atomic number '+el.num+'. This one was always meant for you.')+'"';
+    // Special buddy discovery audio
+    playTone(523,'sine',.15,.1);setTimeout(()=>playTone(659,'sine',.15,.1),120);setTimeout(()=>playTone(784,'sine',.15,.1),240);setTimeout(()=>playTone(1047,'sine',.2,.12),380);setTimeout(()=>playTone(1319,'sine',.25,.12),520);
+    bigBurst(innerWidth/2,innerHeight/3,fc.c);bigBurst(innerWidth/2,innerHeight/3,'#FFD54F');
+    triggerExcited();
+  }
+  // Buddy-specific audio: 4-note personal melody
+  const base=[262,330,392,523];const off=el.num%12;
+  base.forEach((f,i)=>setTimeout(()=>playTone(f+off*10,'sine',.12,.06),i*180));
+}
+function ordSuf(n){const s=['th','st','nd','rd'];const v=n%100;return s[(v-20)%10]||s[v]||s[0]}
+// Buddy tap handled by buddyWrap onclick in HTML
+
+// ═══════════════════════════════════════
+// WILD ELEMENT SURPRISE
+// ═══════════════════════════════════════
+function checkWildElement(){
+  if(!state.intro)return;
+  const undiscovered=E.filter(el=>!isDisc(el.num));
+  if(undiscovered.length===0)return;
+  const hours=(Date.now()-(state.lastWild||0))/3600000;
+  if(hours<4)return;
+  if(Math.random()>0.3)return;
+  // Show wild banner
+  const banner=document.getElementById('wildBanner');
+  banner.classList.remove('hidden');
+  document.getElementById('wildText').textContent='\u{1F409} Eternatus senses a wild element nearby!';
+  playTone(200,'sine',.2,.05);setTimeout(()=>playTone(300,'sine',.2,.05),200);setTimeout(()=>playTone(400,'sine',.15,.06),400);
+  // Stays until child taps Reveal
+  document.getElementById('wildBtn').onclick=()=>{
+    state.lastWild=Date.now();saveAll();
+    // Pick random undiscovered
+    const pool=E.filter(el=>!isDisc(el.num));
+    const el=pool[Math.floor(Math.random()*pool.length)];
+    const fc=F[el.f];
+    discover(el.num);discoverFam(el.f);
+    // Reveal animation in-place with close button
+    banner.innerHTML='<div class="wild-reveal"><div class="wr-emoji">'+el.e+'</div><div class="wr-sym" style="color:'+fc.c+';text-shadow:0 0 20px '+fc.gl+'">'+el.s+'</div><div class="wr-name">'+el.n+'</div><div class="wr-speech">"\u26a1 A wild '+el.n+' appeared! '+el.fact+'"</div><button style="margin-top:10px;padding:8px 24px;border-radius:10px;border:none;font-family:Fredoka,sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;background:rgba(255,255,255,.1);color:var(--t1)" id="wildClose">Got it! \u2192</button></div>';
+    banner.style.borderColor=fc.bd;banner.style.background=fc.bg;
+    speakName(el.n);playDiscover();
+    bigBurst(banner.getBoundingClientRect().left+banner.offsetWidth/2,banner.getBoundingClientRect().top+30,fc.c);
+    if(!state.sessionDisc)state.sessionDisc=[];state.sessionDisc.push(el.n);
+    updatePower();updateArcBanner();
+    // Stay until child taps close
+    document.getElementById('wildClose').onclick=()=>{
+      banner.classList.add('hidden');
+      banner.innerHTML='<div class="wild-text" id="wildText"></div><button class="wild-btn" id="wildBtn">Reveal \u2192</button>';
+      checkAch();checkArcComplete();updateTabLocks();renderAll();
+    };
+  };
+}
+
+// ═══════════════════════════════════════
+// EASTER EGG 1: RADIANT ELEMENTS (5% on revisit)
+// ═══════════════════════════════════════
+function isRadiant(){return Math.random()<0.05}
+function playRadiantSound(){
+  playTone(1047,'sine',.08,.08);setTimeout(function(){playTone(1319,'sine',.08,.08)},40);
+  setTimeout(function(){playTone(1568,'sine',.08,.08)},80);setTimeout(function(){playTone(2093,'sine',.12,.1)},120);
+}
+function applyRadiant(el){
+  const hdr=document.getElementById('mhdr');hdr.classList.add('radiant');
+  const info=hdr.querySelector('.m-info');
+  if(info){const badge=document.createElement('div');badge.className='radiant-badge';badge.textContent='✨ RADIANT';info.insertBefore(badge,info.firstChild)}
+  const etT=document.getElementById('meternText');
+  const radiantLines=['Whoa! A RADIANT '+el.n+'! Incredibly rare!','The universe is shining on you! RADIANT '+el.n+'!','I have not seen a Radiant in centuries! '+el.n+' is glowing!','RADIANT! Only the luckiest explorers find these!','The atoms are aligned! A RADIANT '+el.n+'!'];
+  etT.textContent='✨ Eternatus: "'+radiantLines[Math.floor(Math.random()*radiantLines.length)]+'"';
+  if(!state.radiants.includes(el.num)){state.radiants.push(el.num);saveAll()}
+  playRadiantSound();
+}
+function clearRadiant(){document.getElementById('mhdr').classList.remove('radiant');var b=document.querySelector('.radiant-badge');if(b)b.remove()}
+
+// ═══════════════════════════════════════
+// EASTER EGG 2: ETERNATUS WHISPERS (lore at milestones)
+// ═══════════════════════════════════════
+var WHISPERS={
+  15:{text:"Did you know, {name}? Before my powers were scattered, I could fly between stars."},
+  30:{text:"I once met an element so rare it only existed for a millionth of a second. I still remember it."},
+  45:{text:"The elements do not just have powers. They have memories. Carbon remembers every living thing it has ever been part of."},
+  60:{text:"You are past the halfway mark. I can feel the old power coming back. My wings are spreading wider."},
+  75:{text:"Most humans never learn what you already know, {name}. You are different."},
+  90:{text:"Only 28 more. I can almost see the finish line. Can you feel it too?"},
+  105:{text:"13 left. My heart is pounding. For the first time in a thousand years, I am nervous."}
+};
+function checkWhisper(){
+  var count=state.disc.length;
+  if(WHISPERS[count]&&!state.whispersShown.includes(count)){
+    state.whispersShown.push(count);saveAll();
+    document.getElementById('mspText').textContent=T('🌟 '+WHISPERS[count].text);
+    playTone(330,'sine',.2,.05);setTimeout(function(){playTone(440,'sine',.2,.05)},200);setTimeout(function(){playTone(523,'sine',.25,.06)},420);
+  }
+}
+
+// ═══════════════════════════════════════
+// EASTER EGG 3: COMBO DISCOVERY REACTIONS
+// ═══════════════════════════════════════
+function checkComboReaction(el){
+  if(!el.cb||!el.cb.length)return null;
+  for(var i=0;i<el.cb.length;i++){
+    var combo=el.cb[i];
+    var partnerName=combo.w;
+    var partner=E.find(function(e){return e.n===partnerName||e.s===partnerName});
+    if(partner&&isDisc(partner.num)){
+      var key=Math.min(el.num,partner.num)+'-'+Math.max(el.num,partner.num);
+      if(!state.combosReacted.includes(key)){
+        state.combosReacted.push(key);saveAll();
+        return 'Wait... you have BOTH '+el.n+' and '+partner.n+' now! Together they make '+combo.r+'! '+combo.eq+'!';
+      }
+    }
+  }
+  return null;
+}
+
+// ═══════════════════════════════════════
+// EASTER EGG 4: SECRET ELEMENT 119
+// ═══════════════════════════════════════
+function checkSecret119(){
+  if(state.secret119)return;
+  var allFams=Object.keys(F);
+  var touched=allFams.every(function(f){return state.fams.includes(f)});
+  if(touched){
+    state.secret119=true;saveAll();
+    setTimeout(function(){
+      document.getElementById('mspText').textContent=T('🔮 {name}... you have touched every family in my kingdom. Here is something most people never learn: the periodic table is not finished. Scientists are still trying to CREATE element 119. Maybe someday, {name}, YOU will be the one who finds it.');
+      playTone(262,'sine',.2,.06);setTimeout(function(){playTone(392,'sine',.2,.06)},180);setTimeout(function(){playTone(523,'sine',.25,.08)},360);setTimeout(function(){playTone(784,'sine',.3,.1)},560);
+    },1500);
+  }
+}
+
+// ═══════════════════════════════════════
+// EASTER EGG 5: BIRTHDAY WEEK
+// ═══════════════════════════════════════
+function isBirthdayWeek(){
+  if(!P.bday)return false;
+  var today=new Date().getDate();
+  var diff=Math.abs(today-P.bday);
+  if(diff>28)diff=31-diff;
+  return diff<=3;
+}
+var birthdayMsgShown=false;
+function getBirthdayParticleColor(){return isBirthdayWeek()?'#FFD93D':null}
+function checkBirthdayMessage(){
+  if(isBirthdayWeek()&&!birthdayMsgShown&&state.disc.length>5){
+    birthdayMsgShown=true;
+    setTimeout(function(){
+      document.getElementById('mspText').textContent=T('🎂 Birthday power is making me stronger, {name}!');
+      playTone(523,'sine',.1,.08);setTimeout(function(){playTone(659,'sine',.1,.08)},80);setTimeout(function(){playTone(784,'sine',.12,.08)},160);setTimeout(function(){playTone(1047,'sine',.15,.1)},260);
+    },3000);
+  }
+}
+
+// ═══════════════════════════════════════
+// EASTER EGG 6: NIGHT SHIFT
+// ═══════════════════════════════════════
+function checkNightShift(){
+  var h=new Date().getHours();
+  if(h>=20||h<6){
+    var sf=document.getElementById('sf');
+    for(var i=0;i<40;i++){
+      var s=document.createElement('div');s.className='st';
+      var z=Math.random()*3+1;
+      s.style.cssText='width:'+z+'px;height:'+z+'px;left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;--d:'+(Math.random()*2+1.5)+'s;--a:'+(Math.random()*.3+.2)+';--b:'+(Math.random()*.6+.4)+';animation-delay:'+Math.random()*2+'s';
+      sf.appendChild(s);
+    }
+    if(state.intro){
+      setTimeout(function(){
+        document.getElementById('mspText').textContent=T('🌙 The elements glow brighter at night, {name}. Perfect time to discover.');
+      },2000);
+    }
+  }
+}
+
+
 function renderProfile(){
   const c=document.getElementById('profile');const total=state.disc.length;
   const days=state.firstDiscTime?Math.max(1,Math.ceil((Date.now()-state.firstDiscTime)/86400000)):0;
@@ -673,12 +1071,22 @@ function renderProfile(){
   if(P.food)anch+='<div class="prof-anchor">🍟 <span>Sodium</span> is the salt on '+P.food+'</div>';
   if(P.pet)anch+='<div class="prof-anchor">🦴 <span>Calcium</span> builds '+P.pet+"'s bones</div>"+'<div class="prof-anchor">🌉 <span>Iron</span> carries oxygen in '+P.pet+"'s blood</div>";
   if(ce)anch+='<div class="prof-anchor">🎨 <span>'+ce.el+'</span> '+ce.why+' — '+P.color+'!</div>';
+  const buddy=getBuddyElement();
+  if(buddy)anch+='<div class="prof-anchor">💜 <span>'+buddy.n+'</span> is your Element Buddy — born on the '+P.bday+ordSuf(P.bday)+', atomic number '+buddy.num+'</div>';
+  if(state.radiants&&state.radiants.length>0)anch+='<div class="prof-anchor">✨ <span>Radiant Elements</span> found: '+state.radiants.length+' of 118</div>';
   let tl='';
   if(state.firstDiscTime)tl+='<div class="tl-item">Started Elementum</div>';
   ACHS.filter(a=>state.achShown.includes(a.c)).forEach(a=>{tl+='<div class="tl-item">Earned '+a.t+'</div>'});
   if(state.megaUnlocked)tl+='<div class="tl-item">Mega Evolution unlocked!</div>';
-  c.innerHTML='<div class="prof-card"><div class="prof-name">'+P.name+"'s Elementum</div>"+'<div class="prof-title">'+(getAchTitle()||'Beginner Explorer')+'</div><div class="prof-stats"><div class="prof-stat"><div class="prof-stat-val">'+total+'</div><div class="prof-stat-lbl">Elements</div></div><div class="prof-stat"><div class="prof-stat-val">'+state.fams.length+'</div><div class="prof-stat-lbl">Families</div></div><div class="prof-stat"><div class="prof-stat-val">'+(state.matchesCorrect||0)+'</div><div class="prof-stat-lbl">Quiz Right</div></div><div class="prof-stat"><div class="prof-stat-val">'+days+'</div><div class="prof-stat-lbl">Days</div></div></div></div>'+(anch?'<div class="prof-anchors"><h3>Your Element Anchors</h3>'+anch+'</div>':'')+(tl?'<div class="prof-timeline"><h3>Your Journey</h3>'+tl+'</div>':'')+'<button class="prof-share" id="profShare">📸 Share Progress</button>';
+  // Session summary
+  let sess='';
+  if(state.sessionDisc&&state.sessionDisc.length>0){
+    const fams=new Set();state.sessionDisc.forEach(n=>{const el=E.find(e=>e.n===n);if(el)fams.add(F[el.f].n)});
+    sess='<div class="sess-summary"><h3>This Session</h3><div class="sess-item">Discovered '+state.sessionDisc.length+' new element'+(state.sessionDisc.length>1?'s':'')+': '+state.sessionDisc.join(', ')+'</div>'+(fams.size?'<div class="sess-item" style="margin-top:4px;color:var(--cyan)">Families touched: '+[...fams].join(', ')+'</div>':'')+'</div>';
+  }
+  c.innerHTML='<div class="prof-card"><div class="prof-name">'+P.name+"'s Elementum</div>"+'<div class="prof-title">'+(getAchTitle()||'Beginner Explorer')+'</div><div class="prof-stats"><div class="prof-stat"><div class="prof-stat-val">'+total+'</div><div class="prof-stat-lbl">Elements</div></div><div class="prof-stat"><div class="prof-stat-val">'+state.fams.length+'</div><div class="prof-stat-lbl">Families</div></div><div class="prof-stat"><div class="prof-stat-val">'+(state.matchesCorrect||0)+'</div><div class="prof-stat-lbl">Quiz Right</div></div><div class="prof-stat"><div class="prof-stat-val">'+days+'</div><div class="prof-stat-lbl">Days</div></div></div></div>'+sess+(anch?'<div class="prof-anchors"><h3>Your Element Anchors</h3>'+anch+'</div>':'')+(tl?'<div class="prof-timeline"><h3>Your Journey</h3>'+tl+'</div>':'')+'<button class="prof-share" id="profShare">📸 Share Progress</button><button class="reset-btn" id="resetBtn" style="margin-top:16px;opacity:.3;font-size:.6rem;font-family:Quicksand,sans-serif;font-weight:600;color:var(--t2);background:none;border:none;cursor:pointer;width:100%;text-align:center;padding:8px">↺ Reset All Progress</button>';
   document.getElementById('profShare').onclick=showShareCard;
+  document.getElementById('resetBtn').onclick=()=>document.getElementById('resetConfirm').classList.remove('hidden');
 }
 function showShareCard(){
   const ov=document.getElementById('shareOv');
@@ -695,7 +1103,7 @@ document.getElementById('shareClose').onclick=()=>document.getElementById('share
 // ═══════════════════════════════════════
 function maybeMatch(){if(state.disc.length%5===0&&state.disc.length>0)setTimeout(()=>showMatch(),800)}
 function showMatch(){
-  const disc=E.filter(el=>isDisc(el.num)&&el.l1);if(disc.length<4)return;
+  const disc=E.filter(el=>isDisc(el.num));if(disc.length<4)return;
   const rev=((state.matchesPlayed||0)%2===1);
   const tgt=disc[Math.floor(Math.random()*disc.length)];
   const oth=disc.filter(el=>el.num!==tgt.num).sort(()=>Math.random()-.5).slice(0,3);
@@ -742,6 +1150,31 @@ function mkStars(){const el=document.getElementById('sf');for(let i=0;i<60;i++){
 function burst(x,y,color,count=7){for(let i=0;i<count;i++){const p=document.createElement('div');p.className='particle';const a=(Math.PI*2/count)*i+Math.random()*.5,d=30+Math.random()*35;p.style.cssText=`left:${x-3}px;top:${y-3}px;background:${color};--tx:${Math.cos(a)*d}px;--ty:${Math.sin(a)*d}px;box-shadow:0 0 5px ${color}`;document.body.appendChild(p);setTimeout(()=>p.remove(),600)}}
 function bigBurst(x,y,c){burst(x,y,c,14)}
 function showCeleb(text){const el=document.getElementById('celeb');const t=document.createElement('div');t.className='celeb-text';t.textContent=text;el.appendChild(t);setTimeout(()=>t.remove(),900)}
+function showToast(emoji,name,famName,famColor){
+  const t=document.getElementById('toast');
+  document.getElementById('toastEmoji').textContent=emoji;
+  document.getElementById('toastText').innerHTML='<span style="color:var(--cyan)">New Element!</span> '+name;
+  document.getElementById('toastFam').textContent=famName;
+  t.style.borderLeftColor=famColor;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+function showFamCeleb(famKey,title,quote,onClose){
+  const fc=F[famKey];const ov=document.getElementById('famCeleb');
+  document.getElementById('famGlow').style.background=fc.c;
+  document.getElementById('famBadge').textContent=fc.n;
+  document.getElementById('famBadge').style.background=fc.bg;
+  document.getElementById('famBadge').style.color=fc.c;
+  document.getElementById('famBadge').style.border='1.5px solid '+fc.bd;
+  document.getElementById('famTitle').textContent=title;
+  document.getElementById('famTitle').style.color=fc.c;
+  document.getElementById('famQuote').textContent='"'+quote+'"';
+  ov.classList.add('active');
+  // Particle cascade
+  for(let i=0;i<6;i++)setTimeout(()=>bigBurst(innerWidth/2+(Math.random()*120-60),innerHeight/2+(Math.random()*100-50),fc.c),i*200);
+  // Close on button tap
+  document.getElementById('famClose').onclick=()=>{ov.classList.remove('active');if(onClose)onClose()};
+}
 
 // ═══════════════════════════════════════
 // WELCOME
@@ -751,12 +1184,15 @@ function runWelcome(){
   if(state.intro){w.style.display='none';document.getElementById('app').classList.remove('hidden');return}
   if(P.name!=='Explorer'){w.style.display='none';runIntro();return}
   const ni=document.getElementById('wName'),ti=document.getElementById('wToy'),btn=document.getElementById('wStart');
-  const fi=document.getElementById('wFood'),pi=document.getElementById('wPet'),ci=document.getElementById('wColor');
-  function check(){btn.disabled=!ni.value.trim()||!ti.value.trim()}
+  const fi=document.getElementById('wFood'),pi=document.getElementById('wPet'),ci=document.getElementById('wColor'),bi=document.getElementById('wBday');
+  function check(){const ok=ni.value.trim()&&ti.value.trim();btn.disabled=!ok;document.getElementById('wStartHint').style.display=ok?'none':'block'}
   ni.oninput=check;ti.oninput=check;
   btn.onclick=()=>{
+    // Resume AudioContext for iPad
+    try{getAC().resume()}catch(e){}
     P.name=ni.value.trim()||'Explorer';P.toy=ti.value.trim()||'blanket';
     P.food=fi.value.trim()||'';P.pet=pi.value.trim()||'';P.color=ci.value.trim()||'';
+    P.bday=bi?parseInt(bi.value)||0:0;if(P.bday<1||P.bday>31)P.bday=0;
     saveAll();
     // Welcome beat
     w.classList.add('done');
@@ -764,7 +1200,7 @@ function runWelcome(){
     wb.classList.remove('hidden');
     document.getElementById('wbName').textContent='Welcome, '+P.name+'.';
     playTone(440,'sine',.15,.06);setTimeout(()=>playTone(660,'sine',.15,.06),200);
-    setTimeout(()=>{wb.classList.add('hidden');w.style.display='none';runIntro()},2200);
+    document.getElementById('wbBtn').onclick=()=>{wb.classList.add('hidden');w.style.display='none';runIntro()};
   };
 }
 
@@ -788,24 +1224,56 @@ function runIntro(){
 }
 function advanceIntro(){
   const btn=document.getElementById('iBtn'),speech=document.getElementById('iSpeech'),card=document.getElementById('iCard');
+  const buddy=getBuddyElement();
+  const hasBuddy=!!buddy;
   if(introStep===0){
-    document.getElementById('iTitle').textContent='Help Eternatus!';
-    speech.textContent=T("My powers are scattered across the elements. Every one you discover makes me stronger. Let's find the first one together, {name}!");
-    btn.textContent='Find Hydrogen →';card.innerHTML='';card.classList.remove('show');card.style.background='transparent';card.style.border='none';
-  }else if(introStep>=1&&introStep<=5){
-    const seq=INTRO_SEQ[introStep-1];const el=EL[seq.num];const fc=F[el.f];
-    speech.textContent=T(seq.speech);
-    card.style.background=fc.bg;card.style.border=`1.5px solid ${fc.bd}`;
-    card.innerHTML=`<div class="ic-emoji">${el.e}</div><div class="ic-sym" style="color:${fc.c};text-shadow:0 0 20px ${fc.gl}">${el.s}</div><div class="ic-name">${el.n}</div>`;
-    card.classList.add('show');discover(seq.num);discoverFam(el.f);speakName(el.n);playDiscover();
-    btn.textContent=introStep<5?'Next Element →':"Let's Explore!";
+    document.getElementById('iTitle').textContent='Professor Eternatus';
+    card.innerHTML='';card.classList.remove('show');card.style.background='transparent';card.style.border='none';
+    if(hasBuddy){
+      speech.textContent=T("I am the ancient dragon of the elements, {name}. My powers have been scattered across 118 elements. Every one you discover makes me stronger. But first... let me show you something about YOU.");
+      btn.textContent='What is it? →';
+    }else{
+      speech.textContent=T("I am the ancient dragon of the elements, {name}. My powers have been scattered across 118 elements. Every one you discover makes me stronger. Let me introduce you to your first 5!");
+      btn.textContent='Find Hydrogen →';
+    }
+  }else if(introStep===1&&hasBuddy){
+    const fc=F[buddy.f];
+    const BS={1:"Hydrogen is the lightest thing in the entire universe and the FIRST atom ever born after the Big Bang. Two Hydrogens plus one Oxygen makes every drop of water you have ever touched. Your superpower? You are the beginning of EVERYTHING.",2:"Helium makes balloons fly and voices go squeaky! Stars are made of it. The Sun is BURNING Helium right now. Your superpower? You are lighter than air itself.",3:"Lithium powers every battery in every phone, tablet, and electric car. Without Lithium, the iPad goes dark. Your superpower? You keep the whole world charged.",4:"Beryllium hides inside every emerald on Earth. That gorgeous green? Beryllium. It is also in spacecraft. Your superpower? Precious gems AND space travel.",5:"Boron is in laundry soap fighting stains, in slime recipes, and in rocket fuel. Your superpower? You clean, you play, you FLY.",6:"Carbon is inside EVERYTHING alive. Inside {toy}. Inside you. Inside every plant, animal, and person on Earth. Squeeze Carbon hard enough and it becomes a DIAMOND. Your superpower? You are the building block of all life.",7:"Nitrogen is invisible and makes up 80% of every breath you take. The ultimate ninja. Everywhere, but nobody notices. Your superpower? You are the invisible force that fills the world.",8:"Oxygen keeps every human, animal, and fire alive. Every breath {name} takes? Oxygen giving your body energy. Your superpower? You are the breath of life itself.",9:"Fluorine is in toothpaste fighting sugar bugs every morning. It makes teeth so tough they crunch anything. Your superpower? You protect and strengthen everything you touch.",10:"Neon lights up the night! Every glowing sign uses Neon. Red, blue, green, any color. Your superpower? You light up the world when it gets dark.",11:"Sodium makes fries taste amazing AND explodes in water! BOOM! Delicious AND dangerous. Your superpower? You are a walking contradiction.",12:"Magnesium makes the dazzling white flash in fireworks. That bright burst that makes everyone go OOOOH? Magnesium. Your superpower? You light up the sky.",13:"Aluminum holds up airplanes AND wraps leftovers. Strong enough for rockets but crushable by hand. Your superpower? Lightweight but mighty.",14:"Silicon started as beach sand. Then it learned to think. Every computer and video game runs on Silicon. Your superpower? You are the sand that learned to THINK.",15:"Phosphorus glows in the dark AND lives inside your DNA. The code that makes you YOU? Phosphorus. Your superpower? You glow AND carry the code of life.",16:"Sulfur stinks like rotten eggs but lives in volcanoes and every living cell. Gross, powerful, and absolutely essential. Your superpower? Nobody can ignore you.",17:"Chlorine zaps germs in every pool so kids splash safe. That pool smell? Chlorine doing its job. Your superpower? You protect everyone around you.",18:"Argon is the shyest element. It hides in lightbulbs, quietly keeping the light going. Never reacts with anyone. Your superpower? You work silently, keeping everything running.",19:"Potassium hides in every banana. It keeps muscles moving and hearts beating. Without it, your heart stops. Your superpower? You keep the most important muscle going.",20:"Calcium builds every bone in your body. Without it you would be floppy like a jellyfish. Your superpower? You are the framework that holds everything together.",21:"Scandium makes stadium lights blazingly bright. That wall of light at a big game? Scandium. Your superpower? You make the biggest stages shine.",22:"Titanium is the superhero metal. Rockets, jets, artificial bones. Almost NOTHING breaks it. Your superpower? You are unbreakable.",23:"Vanadium toughens steel for tools and jet engines. Mix it in and metal becomes way stronger. Your superpower? You make everything around you tougher.",24:"Chromium makes everything shiny! Chrome bumpers, mirror finishes, stainless steel. Your superpower? You bring brilliance to the world.",25:"Manganese stops rust. Without it, train tracks crumble and bridges fall. Your superpower? You prevent things from breaking down.",26:"Iron holds up bridges AND carries oxygen in your blood. Right now, Iron is flowing through {name}. Your superpower? You are strength, inside and out.",27:"Cobalt paints the deepest, most gorgeous blue. For thousands of years, that perfect blue. Your superpower? You create beauty that lasts forever.",28:"Nickel is in every nickel coin. Smooth, strong, humble. Never rusts, never tarnishes. Your superpower? Reliable, steady, always there.",29:"Copper carries electricity through every wire and charger. Every light that turns on ran through Copper. Your superpower? You deliver power to the world.",30:"Zinc heals cuts and scrapes. Got a boo-boo? Zinc fixes it. Also in sunscreen. Your superpower? You heal and protect.",31:"Gallium melts in your hand! Liquid metal puddle. Then solid again. Your superpower? You transform between solid and liquid at will."};
+    document.getElementById('iTitle').textContent='Your Element Superpower';
+    speech.textContent=T(BS[P.bday]||buddy.story);
+    card.style.background=fc.bg;card.style.border='2px solid '+fc.c;
+    card.innerHTML='<div class="ic-emoji" style="font-size:2.8rem">'+buddy.e+'</div><div class="ic-sym" style="color:'+fc.c+';text-shadow:0 0 24px '+fc.gl+';font-size:3.6rem">'+buddy.s+'</div><div class="ic-name" style="font-size:1.1rem">'+buddy.n+'</div><div style="font-family:Quicksand,sans-serif;font-size:.6rem;color:'+fc.c+';font-weight:700;margin-top:4px">YOUR ELEMENT BUDDY</div>';
+    card.classList.add('show');
+    discover(buddy.num);discoverFam(buddy.f);speakName(buddy.n);
+    playTone(523,'sine',.15,.1);setTimeout(function(){playTone(659,'sine',.15,.1)},120);setTimeout(function(){playTone(784,'sine',.15,.1)},240);setTimeout(function(){playTone(1047,'sine',.2,.12)},380);setTimeout(function(){playTone(1319,'sine',.25,.12)},520);
+    setTimeout(function(){bigBurst(innerWidth/2,innerHeight/2-40,'#FFD54F');bigBurst(innerWidth/2,innerHeight/2-40,fc.c)},300);
+    btn.textContent='Meet My First 5 →';
+  }else if((introStep===2&&hasBuddy)||(introStep===1&&!hasBuddy)){
+    document.getElementById('iTitle').textContent='Your First 5 Elements';
+    speech.textContent=T("There are 118 elements in my world, {name}. I am going to introduce you to your first 5 right now. These are your Starters. After that, you will explore the rest on your own. Ready?");
+    card.innerHTML='';card.classList.remove('show');card.style.background='transparent';card.style.border='none';
+    btn.textContent='Find Hydrogen →';
   }else{
-    state.intro=true;saveAll();
-    document.getElementById('intro').classList.add('done');document.getElementById('app').classList.remove('hidden');
-    setTimeout(()=>document.getElementById('intro').style.display='none',600);
-    updatePower();renderAll();updateTabLocks();
+    const offset=hasBuddy?3:2;
+    const elIdx=introStep-offset;
+    if(elIdx>=0&&elIdx<5){
+      const seq=INTRO_SEQ[elIdx];const el=EL[seq.num];const fc=F[el.f];
+      document.getElementById('iTitle').textContent='Element '+(elIdx+1)+' of 5';
+      speech.textContent=T(seq.speech);
+      card.style.background=fc.bg;card.style.border='1.5px solid '+fc.bd;
+      card.innerHTML='<div class="ic-emoji">'+el.e+'</div><div class="ic-sym" style="color:'+fc.c+';text-shadow:0 0 20px '+fc.gl+'">'+el.s+'</div><div class="ic-name">'+el.n+'</div>';
+      card.classList.add('show');discover(seq.num);discoverFam(el.f);speakName(el.n);playDiscover();
+      if(elIdx<4)btn.textContent='Next Element →';
+      else btn.textContent="Let's Explore!";
+    }else{
+      state.intro=true;saveAll();
+      document.getElementById('intro').classList.add('done');document.getElementById('app').classList.remove('hidden');
+      setTimeout(function(){document.getElementById('intro').style.display='none'},600);
+      updatePower();renderAll();updateTabLocks();renderBuddy();
+    }
   }
 }
+
 
 // ═══════════════════════════════════════
 // APP STATE
@@ -838,10 +1306,12 @@ function renderCards(){
     const fc=F[el.f];const disc=isDisc(el.num);const w=document.createElement('div');
     w.className='cw'+(disc?'':' undiscovered');w.style.animationDelay=`${Math.min(i*.035,1.2)}s`;
     w.style.setProperty('--cc',fc.c);w.style.setProperty('--cbg',fc.bg);w.style.setProperty('--cg',fc.gl);w.style.setProperty('--cb',fc.bd);
-    w.innerHTML=`<div class="cin" style="background:${fc.bg};border:1.5px solid ${fc.bd}"><div class="c-fam">${F[el.f].n}</div><div class="c-emoji">${el.e}</div><div class="c-sym">${el.s}</div><div class="c-name">${el.n}</div></div>`;
+    w.innerHTML=`<div class="cin" style="background:${fc.bg};border:1.5px solid ${fc.bd}"><div class="c-fam">${F[el.f].n}</div><div class="c-emoji">${el.e}</div><div class="c-sym">${el.s}</div><div class="c-name">${el.n}</div>${state.radiants&&state.radiants.includes(el.num)?'<div class="card-radiant">✨</div>':''}</div>`;
     w.onclick=(ev)=>{
       const isNew=discover(el.num);const isNewFam=discoverFam(el.f);openModal(el,isNew,isNewFam);
-      if(isNew){bigBurst(ev.clientX,ev.clientY,fc.c);playDiscover();showCeleb('New Element!');w.classList.remove('undiscovered');setTimeout(()=>{checkAch();checkMega();updateTabLocks();maybeMatch()},500)}
+      if(isNew){bigBurst(ev.clientX,ev.clientY,getBirthdayParticleColor()||fc.c);playDiscover();showToast(el.e,el.n,F[el.f].n,fc.c);w.classList.remove('undiscovered');
+        if(!state.sessionDisc)state.sessionDisc=[];state.sessionDisc.push(el.n);saveAll();
+        setTimeout(()=>{checkAch();checkMega();checkArcComplete();checkWhisper();checkSecret119();updateTabLocks();updateArcBanner();maybeMatch()},500)}
       else{burst(ev.clientX,ev.clientY,fc.c);playRevisit(el.f)}
       if(isNewFam)setTimeout(()=>playTone(392,'sine',.1),400);
       updatePower();updateCount();
@@ -911,9 +1381,54 @@ function renderEOTDCustom(el){
 // ═══════════════════════════════════════
 // DRAGON'S MAP
 // ═══════════════════════════════════════
+let mapFam='all';
+function renderMapTabs(){
+  const c=document.getElementById('dmFtabs');c.innerHTML='';
+  const fams=[{key:'all',name:'All Families'},...Object.keys(F).map(k=>({key:k,name:F[k].n}))];
+  fams.forEach(fm=>{
+    const b=document.createElement('button');b.className='ftab'+(fm.key===mapFam?' active':'');b.textContent=fm.name;
+    if(fm.key!=='all'&&fm.key===mapFam){b.style.background=F[fm.key].c;b.style.boxShadow=`0 3px 14px ${F[fm.key].gl}`}
+    else if(fm.key==='all'&&mapFam==='all')b.style.background='linear-gradient(135deg,var(--cyan),var(--purple))';
+    b.onclick=()=>{mapFam=fm.key;renderMapTabs();applyMapFilter();
+      if(fm.key!=='all'){playFamilySound(fm.key);const bio=document.getElementById('dmFbio'),txt=document.getElementById('dmFbioText');txt.textContent=T(F[fm.key].bio);bio.classList.add('show');bio.style.borderColor=F[fm.key].bd;bio.style.background=F[fm.key].bg}
+      else{document.getElementById('dmFbio').classList.remove('show');playTone(500,'sine',.08)}
+    };
+    c.appendChild(b);
+  });
+}
+function applyMapFilter(){
+  const cells=document.querySelectorAll('.dm-cell');
+  cells.forEach(cell=>{
+    const num=parseInt(cell.dataset.num);const el=EL[num];
+    if(!el)return;
+    const fc=F[el.f];
+    if(mapFam==='all'){
+      cell.style.opacity='';cell.style.transform='';cell.style.boxShadow='';
+      cell.style.background=fc.bg;cell.style.borderColor=fc.bd;cell.style.zIndex='';
+      cell.querySelector('.dm-sym').style.color=fc.c;
+      cell.querySelector('.dm-num').style.color='';
+    }else if(el.f===mapFam){
+      cell.style.opacity='1';
+      cell.style.transform='scale(1.15)';
+      cell.style.background=fc.c;
+      cell.style.borderColor=fc.c;
+      cell.style.boxShadow='0 0 10px '+fc.gl+', 0 0 20px '+fc.gl;
+      cell.style.zIndex='3';
+      cell.querySelector('.dm-sym').style.color='#0B0E1A';
+      cell.querySelector('.dm-num').style.color='#0B0E1A';
+    }else{
+      cell.style.opacity='.15';cell.style.transform='';cell.style.boxShadow='';
+      cell.style.background=fc.bg;cell.style.borderColor=fc.bd;cell.style.zIndex='';
+      cell.querySelector('.dm-sym').style.color=fc.c;
+      cell.querySelector('.dm-num').style.color='';
+    }
+  });
+}
 function renderMap(){
   const g=document.getElementById('dmapGrid');g.innerHTML='';
   document.getElementById('dmColHint').classList.remove('show');
+  document.getElementById('dmFbio').classList.remove('show');
+  mapFam='all';renderMapTabs();
   for(let r=1;r<=10;r++){for(let c=1;c<=18;c++){
     let el=null;for(const num in PP){if(PP[num][0]===r&&PP[num][1]===c){el=EL[+num];break}}
     if(r===8){if(c===1){const d=document.createElement('div');d.style.cssText=`grid-row:8;grid-column:1/19;height:6px`;g.appendChild(d)}continue}
@@ -921,11 +1436,14 @@ function renderMap(){
     if(!el)continue;
     const fc=F[el.f];const disc=isDisc(el.num);const d=document.createElement('div');
     d.className='dm-cell'+(disc?'':' undiscovered');
-    d.style.cssText=`grid-row:${r};grid-column:${c};background:${fc.bg};border:1px solid ${fc.bd};color:${fc.c}`;
+    d.dataset.num=el.num;
+    d.style.cssText=`grid-row:${r};grid-column:${c};background:${fc.bg};border:1px solid ${fc.bd};color:${fc.c};transition:opacity .3s,transform .3s`;
     d.innerHTML=`<div class="dm-num">${el.num}</div><div class="dm-sym">${el.s}</div>`;
     d.onclick=(ev)=>{
       const isNew=discover(el.num);const isNewFam=discoverFam(el.f);openModal(el,isNew,isNewFam);
-      if(isNew){bigBurst(ev.clientX,ev.clientY,fc.c);playDiscover();showCeleb('New Element!');d.classList.remove('undiscovered');setTimeout(()=>{checkAch();checkMega();updateTabLocks();maybeMatch()},500)}
+      if(isNew){bigBurst(ev.clientX,ev.clientY,getBirthdayParticleColor()||fc.c);playDiscover();showToast(el.e,el.n,F[el.f].n,fc.c);d.classList.remove('undiscovered');
+        if(!state.sessionDisc)state.sessionDisc=[];state.sessionDisc.push(el.n);saveAll();
+        setTimeout(()=>{checkAch();checkMega();checkArcComplete();checkWhisper();checkSecret119();updateTabLocks();updateArcBanner();maybeMatch()},500)}
       else{burst(ev.clientX,ev.clientY,fc.c);playRevisit(el.f)}
       updatePower();
       // Column teaching
@@ -939,6 +1457,7 @@ function renderMap(){
 // MODAL
 // ═══════════════════════════════════════
 function openModal(el,isNew,isNewFam){
+  clearRadiant();
   const fc=F[el.f];const m=document.getElementById('mov'),mc=document.getElementById('mc');
   mc.style.setProperty('--cc',fc.c);mc.style.setProperty('--cbg',fc.bg);mc.style.setProperty('--cg',fc.gl);mc.style.setProperty('--cb',fc.bd);
   document.getElementById('mhdr').style.background=fc.bg;
@@ -954,10 +1473,18 @@ function openModal(el,isNew,isNewFam){
   if(isNew){
     let line=el.eLine?T(el.eLine):T(F[el.f].disc);
     if(isNewFam)line=`NEW FAMILY: ${F[el.f].n}! `+line;
+    // Check combo reaction
+    const comboMsg=checkComboReaction(el);
+    if(comboMsg)line=line+' '+comboMsg;
     etT.textContent='⚡ Eternatus: "'+line+'"';
   }else{
-    const rv=el.rv?T(el.rv):`${el.n}! One of my favorites.`;
-    etT.textContent='🐉 Eternatus: "'+rv+'"';
+    // RADIANT CHECK (5% chance on revisit)
+    if(isRadiant()){
+      applyRadiant(el);
+    }else{
+      const rv=el.rv?T(el.rv):`${el.n}! One of my favorites.`;
+      etT.textContent='🐉 Eternatus: "'+rv+'"';
+    }
   }
   speakName(el.n);
   playRumble();if(isNew)document.getElementById('mspText').textContent=el.eLine?T(el.eLine):T(F[el.f].disc);
@@ -965,7 +1492,7 @@ function openModal(el,isNew,isNewFam){
   btn.onclick=()=>{speakName(el.n);playFamilySound(el.f)};
   m.classList.add('active');document.body.style.overflow='hidden';
 }
-function closeModal(){document.getElementById('mov').classList.remove('active');document.body.style.overflow='';playTone(500,'sine',.06)}
+function closeModal(){clearRadiant();document.getElementById('mov').classList.remove('active');document.body.style.overflow='';playTone(500,'sine',.06)}
 document.getElementById('mx').onclick=closeModal;
 document.getElementById('mov').onclick=(e)=>{if(e.target.id==='mov')closeModal()};
 
@@ -984,8 +1511,8 @@ document.getElementById('ltabs').onclick=(e)=>{
   document.getElementById('dmap').classList.toggle('hidden',lv!=='map');
   document.getElementById('eotd').classList.toggle('hidden',lv!=='eotd');
   document.getElementById('profile').classList.toggle('hidden',lv!=='profile');
-  if(showGrid)renderAll();
-  if(lv==='map')renderMap();
+  if(showGrid){renderAll();if(lv==='1')updateArcBanner();else document.getElementById('arcBanner').classList.add('hidden')}
+  if(lv==='map'){renderMap();document.getElementById('arcBanner').classList.add('hidden')}
   if(lv==='eotd'){renderEOTD();playEOTDShimmer()}
   if(lv==='profile')renderProfile();
   updateMascot('all');updatePower();
@@ -997,10 +1524,9 @@ document.getElementById('ltabs').onclick=(e)=>{
 // ═══════════════════════════════════════
 mkStars();
 runWelcome();
-if(state.intro){renderAll();updateMascot('all');updateTabLocks();document.getElementById('achTitle').textContent=getAchTitle()}
+if(state.intro){renderAll();updateMascot('all');updateTabLocks();updateArcBanner();checkWelcomeBack();checkWildElement();renderBuddy();checkNightShift();checkBirthdayMessage();document.getElementById('achTitle').textContent=getAchTitle()}
 
-// Reset
-document.getElementById('resetBtn').onclick=()=>document.getElementById('resetConfirm').classList.remove('hidden');
+// Reset (now triggered from profile tab)
 document.getElementById('resetCancel').onclick=()=>document.getElementById('resetConfirm').classList.add('hidden');
 document.getElementById('resetYes').onclick=()=>{localStorage.removeItem(SK);location.reload()};
 </script>
